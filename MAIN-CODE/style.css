@@ -271,6 +271,10 @@ body {
 
 /* Hide Hamburger on Larger Screens */
 @media (min-width: 921px) {
+  .list-footer{
+    display: none;
+  }
+
   #expand-login-check {
     display: none;
   }

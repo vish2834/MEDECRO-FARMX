@@ -1,19 +1,20 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Garamond, sans-serif;
 }
+
 :root {
-  --green: #CCF783;;
+  --green: #CCF783;
   --black: #323131;
 }
 
-body{
+body {
   background-color: var(--black);
   overflow-x: hidden;
 }
+
 /* navbar */
 .nav-bar {
   height: 55px;
@@ -23,7 +24,7 @@ body{
   align-items: center;
   list-style: none;
   background-color: var(--color2);
-  padding: 0px 20px;
+  padding: 0px 20px 0px 5px;
   position: relative;
   background-color: #3d3d3d;
   margin-bottom: 0;
@@ -42,15 +43,16 @@ body{
 }
 
 .menu li {
-  margin-left: 30px;
   font-size: 1.5em;
 }
 
 .menu li a {
+  width: 100%;
   text-decoration: none;
   color: white;
   transition: 0.15s ease-in-out;
-  position: relative;
+  display: block;
+  padding-left: 30px;
 }
 
 
@@ -73,9 +75,9 @@ body{
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #2B3E50;;
+  background-color: #2B3E50;
   min-width: 160px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -94,6 +96,7 @@ body{
 .login:hover .dropdown-content {
   display: block;
 }
+
 /* Hamburger and Close Menu Icons */
 .open-menu,
 .close-menu {
@@ -102,7 +105,8 @@ body{
   font-size: 1.5rem;
   z-index: 100;
   position: absolute;
-  display: none; /* Hidden by default */
+  display: none;
+  /* Hidden by default */
 }
 
 .open-menu {
@@ -119,13 +123,16 @@ body{
   display: none;
 }
 
+
+
 /* Responsive Navbar */
 @media (max-width: 920px) {
   .menu {
+    padding-top: 40px;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 70%;
+    justify-content: start;
+    width: 100%;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -135,11 +142,99 @@ body{
     transition: all 0.3s ease-in-out;
   }
 
+
   .menu li {
-    margin-top: 40px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
-  #check:checked ~ .menu {
+  .menu .login #expand-login-check {
+    position: absolute;
+    top: 264px;
+    z-index: 99999999;
+    width: 100%;
+    height: 30px;
+    opacity: 0;
+  }
+
+  #expand-login-check:checked~a .expand-option {
+    transform: rotate(135deg);
+  }
+
+  #expand-login-check:checked~.dropdown-content {
+    font-size: medium;
+    padding-left: 30px;
+    display: block;
+  }
+
+  #expand-login-check:not(:checked)~.dropdown-content {
+    display: none;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #343434;
+  }
+
+  .menu .login a {
+    padding-right: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu .login a .expand-option {
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff00;
+    display: block;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    transform: rotate(-45deg);
+    transition: transform 200ms;
+  }
+
+  .menu .list-footer h4 {
+    font-size: medium;
+    color: #fff;
+  }
+
+  .menu .list-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    color: white;
+    padding-left: 30px;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .menu .social-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .menu .social-icons a{
+    padding: 0;
+
+  }
+
+
+  /* } */
+
+
+  .menu .login .dropdown-content {
+    width: 100%;
+    box-shadow: none;
+    background-color: #343434;
+  }
+
+  #check:checked~.menu {
     right: 0;
     background-color: #343434;
   }
@@ -147,38 +242,48 @@ body{
   .open-menu,
   .close-menu {
     color: white;
-    display: block; /* Show icons on small screens */
+    display: block;
+    /* Show icons on small screens */
   }
 
-  #check:not(:checked) ~ .open-menu {
+  #check:not(:checked)~.open-menu {
     color: white;
-    display: block; /* Show hamburger icon when menu is closed */
+    display: block;
+    /* Show hamburger icon when menu is closed */
   }
 
-  #check:checked ~ .open-menu {
+  #check:checked~.open-menu {
     color: white;
-    display: none; /* Hide hamburger icon when menu is open */
+    display: none;
+    /* Hide hamburger icon when menu is open */
   }
 
-  #check:not(:checked) ~ .close-menu {
-    display: none; /* Hide close icon when menu is closed */
+  #check:not(:checked)~.close-menu {
+    display: none;
+    /* Hide close icon when menu is closed */
   }
 
-  #check:checked ~ .close-menu {
-    display: block; /* Show close icon when menu is open */
+  #check:checked~.close-menu {
+    display: block;
+    /* Show close icon when menu is open */
   }
 }
 
 /* Hide Hamburger on Larger Screens */
 @media (min-width: 921px) {
-  .open-menu, .close-menu {
-    display: none; /* Hide hamburger and close icons on larger screens */
+  #expand-login-check {
+    display: none;
+  }
+
+  .open-menu,
+  .close-menu {
+    display: none;
+    /* Hide hamburger and close icons on larger screens */
   }
 }
 
 .logo img {
-  height: 85px;
-  width: 95px;
+  width: 85px;
   cursor: pointer;
 }
 
@@ -200,7 +305,8 @@ main {
   /* position :; */
   top: 0;
 }
-.logcrdentials{
+
+.logcrdentials {
   text-decoration: underline;
   color: red;
 }
@@ -297,6 +403,7 @@ main {
   border-radius: 5px;
   font-size: 16px;
 }
+
 .buttons .one {
   background-color: white;
   color: black;
@@ -316,25 +423,30 @@ main {
 /*⭐ Responsive Styles  ⭐*/
 @media (max-width: 800px) {
   .content {
-    padding: 0 20px; /* Reduce padding on smaller screens */
+    padding: 0 20px;
+    /* Reduce padding on smaller screens */
   }
 
   .head h1 {
-    font-size: 32px; /* Adjust font size */
+    font-size: 32px;
+    /* Adjust font size */
   }
 
   .off p {
-    font-size: 16px; /* Adjust font size */
+    font-size: 16px;
+    /* Adjust font size */
   }
 
   .buttons {
-    flex-direction: column; /* Stack buttons on smaller screens */
+    flex-direction: column;
+    /* Stack buttons on smaller screens */
   }
 
   .buttons .one,
   .buttons .two {
     width: 100%;
-    margin-bottom: 10px; /* Add spacing between stacked buttons */
+    margin-bottom: 10px;
+    /* Add spacing between stacked buttons */
   }
 }
 
@@ -352,7 +464,8 @@ main {
   flex: 1;
   padding: 20px;
   box-sizing: border-box;
-  min-width: 300px; /* Ensure columns do not get too small */
+  min-width: 300px;
+  /* Ensure columns do not get too small */
 }
 
 .img-section {
@@ -395,7 +508,7 @@ main {
 }
 
 .about_us-section {
-  padding: 40px 20px;
+  /* padding: 40px 20px; */
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -411,6 +524,7 @@ main {
   width: 80%;
   flex-direction: column;
 }
+
 .content-col h3 {
   font-family: "ga", sans-serif;
   font-weight: 400;
@@ -418,6 +532,7 @@ main {
   font-size: 46px;
   color: #444343;
 }
+
 .content-col p {
   font-size: 25px;
   text-align: justify;
@@ -465,15 +580,18 @@ main {
 /* Responsive Adjustments for about us Section */
 @media (min-width: 768px) {
   .row {
-    flex-direction: row; /* Aligns columns horizontally on larger screens */
+    flex-direction: row;
+    /* Aligns columns horizontally on larger screens */
   }
 
   .content-col {
-    order: 1; /* Default order for content section */
+    order: 1;
+    /* Default order for content section */
   }
 
   .img-section {
-    order: 0; /* Moves the image section to the left */
+    order: 0;
+    /* Moves the image section to the left */
     padding: 20px;
     text-align: center;
   }
@@ -503,7 +621,7 @@ main {
 }
 
 .doctor-image {
-  margin-top:20px;
+  margin-top: 20px;
   max-width: 200px;
   width: 100%;
   height: 130%;
@@ -512,8 +630,8 @@ main {
 
 .doctor-section h2 {
   font-size: 4rem;
-    color: white;
-    margin-bottom: 20px;
+  color: white;
+  margin-bottom: 20px;
 }
 
 .appointment-btn {
@@ -531,7 +649,7 @@ main {
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-bottom: 30px;
-  
+
 }
 
 .appointment-btn:hover {
@@ -619,7 +737,7 @@ main {
 .service-2 {
   background-image: url("./images/medical-record.png");
   background-size: contain;
-   background-position: center;
+  background-position: center;
 }
 
 .service-3 {
@@ -677,14 +795,14 @@ main {
   background-color: var(--green);
 }
 
-.carousel-container span{
+.carousel-container span {
   color: var(--black);
   display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    font-weight: 700;
-    font-family: ui-monospace;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: ui-monospace;
 
 }
 
@@ -695,7 +813,8 @@ main {
 }
 
 .card {
-  flex: 1 0 30%; /* Show 2-3 cards based on screen size */
+  flex: 1 0 30%;
+  /* Show 2-3 cards based on screen size */
   margin: 0 10px;
   background-color: var(--black);
   border-radius: 10px;
@@ -724,7 +843,7 @@ main {
   margin: 10px 0;
 }
 
-.card .map-link{
+.card .map-link {
   font-weight: 600;
   text-align: center;
   text-decoration: none;
@@ -744,11 +863,12 @@ main {
 }
 
 /* Navigation Arrows (optional) */
-.prev, .next {
+.prev,
+.next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
   padding: 10px;
@@ -799,36 +919,36 @@ main {
 /* Responsive Design */
 @media (min-width: 1024px) {
   .care-connect-section {
-      height: 50vh;
-      padding: 100px 0;
+    height: 50vh;
+    padding: 100px 0;
   }
 
   .care-connect-content {
-      text-align: left;
+    text-align: left;
   }
 
   .care-connect-content h1 {
-      font-size: 60px;
+    font-size: 60px;
   }
 
   .care-connect-content p {
-      font-size: 20px;
-      line-height: 1.6;
+    font-size: 20px;
+    line-height: 1.6;
   }
 }
 
 @media (max-width: 768px) {
   .care-connect-section {
-      padding: 30px;
+    padding: 30px;
   }
 
   .care-connect-content h1 {
-      font-size: 36px;
+    font-size: 36px;
   }
 
   .care-connect-content p {
-      font-size: 16px;
-      line-height: 1.4;
+    font-size: 16px;
+    line-height: 1.4;
   }
 }
 
@@ -872,6 +992,7 @@ main {
   font-size: 16px;
   transition: background-color 0.3s ease;
   border: none;
+  text-wrap: nowrap;
 }
 
 .appointment-button:hover {
@@ -888,17 +1009,17 @@ main {
 /* Responsive Design */
 @media (max-width: 768px) {
   .booking-section {
-      grid-template-columns: 1fr;
-      text-align: center;
+    grid-template-columns: 1fr;
+    text-align: center;
   }
 
   .booking-content {
-      text-align: center;
+    text-align: center;
   }
 
   .booking-image img {
-      width: 80%;
-      margin: 0 auto;
+    width: 80%;
+    margin: 0 auto;
   }
 }
 
@@ -969,7 +1090,7 @@ main {
   font-weight: 800;
 }
 
-.option .bttn{
+.option .bttn {
   background-color: #d8ff94;
   color: #000;
   border: none;
@@ -987,13 +1108,14 @@ main {
   flex-direction: column;
 }
 
-.option  .bttn:hover{
+.option .bttn:hover {
   text-decoration: none;
 }
 
 .option .bttn:hover {
   background-color: #b8e080;
 }
+
 .option button:hover {
   background-color: #b8e080;
 }
@@ -1001,40 +1123,40 @@ main {
 /* Responsive Design for Smaller Screens */
 @media (max-width: 1024px) {
   .dashboard-options {
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
   }
 
   .option {
-      width: 100%;
+    width: 100%;
   }
 
   .option img {
-      width: 100px;
-      height: 100px;
+    width: 100px;
+    height: 100px;
   }
 
   .option button {
-      font-size: 14px;
-      padding: 8px 20px;
+    font-size: 14px;
+    padding: 8px 20px;
   }
 }
 
 @media (max-width: 600px) {
   .option {
-      padding: 15px;
+    padding: 15px;
   }
 
   .option img {
-      width: 130px;
-      height: 130px;
+    width: 130px;
+    height: 130px;
   }
 
   .option button {
-      font-size: 12px;
-      padding: 6px 15px;
-      margin: auto;
+    font-size: 12px;
+    padding: 6px 15px;
+    margin: auto;
   }
 }
 
@@ -1116,16 +1238,16 @@ main {
 
 @media screen and (max-width: 768px) {
   .footer {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .footer-section {
-      margin: 20px 0;
+    margin: 20px 0;
   }
 
-  .footer-section .social-icons{
+  .footer-section .social-icons {
     align-items: center;
     justify-content: center;
   }
@@ -1173,6 +1295,7 @@ main {
   border: 1px solid #ddd;
   border-radius: 5px;
 }
+
 .message {
   padding: 10px;
   margin-top: 20px;

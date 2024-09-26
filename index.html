@@ -24,18 +24,29 @@
       <ul class='nav-bar'>
         <input type='checkbox' id='check' />
         <div class="logo">
-          <img src="./MAIN-CODE/images/logo.png" alt="Logo" />
+          <img src="./MAIN-CODE/images/icon.png" alt="Logo" />
         </div>
         <span class="menu">
           <li><a href="#appointment">Home</a></li>
           <li><a href="#appointment">About</a></li>
           <li><a href="#services-location"> Our Services</a></li>
            <!-- Login Dropdown Menu -->
-      <li class="login" id="homelogin">
-        <a href="#">Login</a>
+      <li class="login" id="homelogin" for="expand-login-check">
+        <input type="checkbox" id="expand-login-check">
+        <a href="#">Login <span class="expand-option"></span></a> 
         <div class="dropdown-content">
-          <a href="./doctor-login/index.html" target="_blank">For a Doctor</a> <!-- Replace with actual link -->
-          <a href="./login/login.html" target="_blank">For a Patient</a> <!-- Replace with actual link -->
+          <a href="./doctor-login/index.html" target="_blank">As Doctor</a> <!-- Replace with actual link -->
+          <a href="./login/login.html" target="_blank">As Patient</a> <!-- Replace with actual link -->
+        </div>
+      </li>
+      <li class="list-footer">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+
+          <a target="_blank" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+          <a target="_blank" href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a>
+          <a target="_blank" href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+          <a target="_blank" href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
         </div>
       </li>
          
@@ -73,7 +84,7 @@
   <!-- about section -->
 
   <div id="appointment" class="about_us-section">
-    <div class="row">
+    <div class="row" style="width: 100%;">
       <!-- Content Section (will be on the left on larger screens) -->
       <div id="about" class="column content-col">
         <h3>About Us</h3>

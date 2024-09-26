@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Form</title>
+    <link rel="stylesheet" href="doctor_appointment.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="logo.jpeg-removebg-preview.png" alt="Logo">
+            <style>
+                img {
+                    width: 80px;
+                    height: auto;
+                    box-shadow: 2px 2px 20px rgb(208, 28, 28);
+                    border-radius: 50%;
+                }
+            </style>
+        </div>
+
+        <div class="profile-section">
+            <img src="pexels-shvetsa-4167541.jpg" alt="Doctor Profile Picture">
+            <h2>Dr. PHORE</h2>
+            <p>General Physician</p>
+            <p>123 Any Avenue<br>Gurgaon, ST 12345</p>
+            <p>+91-9991646109</p>
+            <ul>
+                <hr>
+                <li>✔ Your first provider</li>
+                <li>✔ Accepting new patients</li>
+            </ul>
+        </div>
+
+        <div class="form-section">
+            <h3>Personal Information</h3>
+            <form>
+                <label for="appointment-date">Your Appointment:</label>
+                <input type="date" id="appointment-date" name="appointment-date">
+
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time">
+
+                <label for="reason">What is the reason for your visit?</label>
+                <textarea id="reason" name="reason" rows="4"></textarea>
+
+                <label for="provider">Have you Visited efore?</label>
+                <select id="provider" name="provider">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

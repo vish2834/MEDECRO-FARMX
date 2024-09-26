@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Billing</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ffeef2, #ffffff); /* Light red gradient */
+        }
+        .container {
+            margin-top: 50px;
+            max-width: 900px; /* Increased width */
+        }
+        h1 {
+            text-align: center;
+            color: #c62828; /* Dark red color */
+        }
+        .billing-item {
+            background-color: #ffffff; /* White background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: flex; /* Use flexbox for alignment */
+            justify-content: space-between; /* Space between charges and buttons */
+            align-items: center;
+        }
+        .billing-item h5 {
+            margin: 0;
+            color: #c62828;
+        }
+        .billing-item p {
+            color: #555;
+        }
+        .btn-primary {
+            background-color: #ff8a80; /* Light red button */
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #c62828; /* Dark red hover effect */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Health Billing</h1>
+        
+        <div class="billing-item">
+            <div>
+                <h5>Sunrise Clinic</h5>
+                <p>Date: September 15, 2024 (Sunday)</p>
+                <p>Consultation Fee: ₹1500.00</p> <!-- Changed currency to INR -->
+            </div>
+            <button class="btn btn-primary">View Receipt</button>
+        </div>
+
+        <div class="billing-item">
+            <div>
+                <h5>Sunrise Clinic</h5>
+                <p>Date: September 10, 2024 (Tuesday)</p>
+                <p>Blood Test: ₹800.00</p> <!-- Changed currency to INR -->
+            </div>
+            <button class="btn btn-primary">View Receipt</button>
+        </div>
+
+        <div class="billing-item">
+            <div>
+                <h5>Heart Care Clinic</h5>
+                <p>Date: August 20, 2024 (Tuesday)</p>
+                <p>X-ray: ₹2000.00</p> <!-- Changed currency to INR -->
+            </div>
+            <button class="btn btn-primary">View Receipt</button>
+        </div>
+
+        <div class="billing-item">
+            <div>
+                <h5>Green Valley Clinic</h5>
+                <p>Date: August 15, 2024 (Thursday)</p>
+                <p>Medication: ₹500.00</p> <!-- Changed currency to INR -->
+            </div>
+            <button class="btn btn-primary">View Receipt</button>
+        </div>
+
+        <div class="text-center">
+            <button class="btn btn-primary">Download Statement</button>
+        </div>
+    </div>
+</body>
+</html>

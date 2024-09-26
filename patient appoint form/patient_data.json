@@ -1,0 +1,47 @@
+[
+    {
+        "patientId": "1",
+        "name": "John Doe",
+        "email": "john@example.com",
+        "phoneNumber": "1234567890",
+        "dateOfBirth": "1990-01-01",
+        "gender": "Male",
+        "city": "Delhi",
+        "clinic": "Signature Clinic",
+        "speciality": "Dermatologist",
+        "doctor": "Dr. Chandresh",
+        "appointmentDate": "2023-09-25",
+        "slot": "Morning",
+        "mode": "Online"
+    },
+    {
+        "patientId": "2",
+        "name": "Jane Smith",
+        "email": "jane@example.com",
+        "phoneNumber": "0987654321",
+        "dateOfBirth": "1985-05-15",
+        "gender": "Female",
+        "city": "Gurgaon",
+        "clinic": "Deepak Hospital",
+        "speciality": "Gynaecologist",
+        "doctor": "Dr. Chauhan",
+        "appointmentDate": "2023-09-30",
+        "slot": "Afternoon",
+        "mode": "In-person"
+    },
+    {
+        "patientId": "3",
+        "name": "Vishal Phore",
+        "email": "vishalphore@example.com",
+        "phoneNumber": "0987654321",
+        "dateOfBirth": "2004-05-15",
+        "gender": "male",
+        "city": "Gurgaon",
+        "clinic": "Deepak Hospital",
+        "speciality": "Dermatologist",
+        "doctor": "Dr. Chauhan",
+        "appointmentDate": "2023-09-30",
+        "slot": "Afternoon",
+        "mode": "In-person"
+    }
+]

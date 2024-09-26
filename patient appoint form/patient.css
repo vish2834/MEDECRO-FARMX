@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: "Garamond", serif;
+  background-color: #349beb;
+}
+
+#boxed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #356bbd;
+}
+
+form {
+  background-color: #ae34c7;
+  font-family: "Garamond", serif;
+  color: black;
+  max-width: 600px;
+  width: 100%;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+#info {
+  height: 38px;
+  width: 48%;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+#dropdown,
+#dropdowns {
+  height: 43px;
+  width: 48%;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+#dropdowns {
+  width: 100%;
+  margin-top: 10px;
+}
+
+#tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+}
+
+.indented-checkbox-text {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 0.9em;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.btns {
+  display: flex;
+  margin-top: 14px;
+}
+.action_btn {
+  display: flex;
+  padding: 10px;
+  margin-left: 15px;
+  height: 40px;
+  width: 100px;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 600;
+  background: white;
+  border: 1px solid rgba(128, 128, 128, 0.535);
+  border-radius: 7px;
+}
+
+
+.action_btn:hover {
+  border: none;
+  cursor: pointer;
+  background-color: #8ec5fc;
+  background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  form {
+    width: 90%;
+  }
+
+  #info,
+  #dropdown {
+    width: 100%;
+  }
+
+  .buttons {
+    justify-content: center;
+    margin: 0;
+  }
+}

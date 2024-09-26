@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Records</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ffebee, #ffffff); /* Soft gradient background */
+        }
+        .container {
+            margin-top: 50px;
+            max-width: 900px; /* Increased width */
+        }
+        h1 {
+            text-align: center;
+            color: #d32f2f; /* Dark red color */
+        }
+        .record-item {
+            background-color: #ffffff; /* White background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: flex; /* Use flexbox for alignment */
+            align-items: center;
+        }
+        .record-item img {
+            width: 80px; /* Image size */
+            height: 80px;
+            border-radius: 50%; /* Circular image */
+            margin-right: 20px; /* Space between image and text */
+        }
+        .record-item h5 {
+            margin: 0;
+            color: #d32f2f;
+        }
+        .record-item p {
+            color: #555;
+        }
+        .btn-primary {
+            background-color: #e57373; /* Light red button */
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #c62828; /* Dark red hover effect */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Medical Records</h1>
+        
+        <div class="record-item">
+            <img src="https://via.placeholder.com/80" alt="Appointment Image">
+            <div>
+                <h5>Appointment with Dr. Smith</h5>
+                <p>Date: 2024-09-15</p>
+                <p>Reason: Routine Check-up</p>
+                <p>Notes: All vital signs normal. Recommended annual health check.</p>
+                <button class="btn btn-primary">View Details</button>
+            </div>
+        </div>
+        
+        <div class="record-item">
+            <img src="https://via.placeholder.com/80" alt="Consultation Image">
+            <div>
+                <h5>Consultation with Dr. Brown</h5>
+                <p>Date: 2024-08-10</p>
+                <p>Reason: Allergy Symptoms</p>
+                <p>Notes: Prescribed antihistamines. Follow-up in 1 month.</p>
+                <button class="btn btn-primary">View Details</button>
+            </div>
+        </div>
+
+        <div class="record-item">
+            <img src="https://via.placeholder.com/80" alt="Blood Test Image">
+            <div>
+                <h5>Blood Test Results</h5>
+                <p>Date: 2024-07-20</p>
+                <p>Results: All parameters within normal range.</p>
+                <button class="btn btn-primary">View Results</button>
+            </div>
+        </div>
+        
+        <div class="record-item">
+            <img src="https://via.placeholder.com/80" alt="X-ray Image">
+            <div>
+                <h5>X-ray Report</h5>
+                <p>Date: 2024-06-30</p>
+                <p>Findings: No abnormalities detected.</p>
+                <button class="btn btn-primary">View Report</button>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button class="btn btn-primary">Add New Record</button>
+        </div>
+    </div>
+</body>
+</html>

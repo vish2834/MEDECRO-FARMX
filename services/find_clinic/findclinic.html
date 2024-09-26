@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Clinic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #e8f5e9); /* Soft gradient background */
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff; /* White background */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #388e3c; /* Dark green color */
+        }
+        .search-options {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .search-options select, .search-options input {
+            width: 30%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f1f8e9; /* Light green background for inputs */
+        }
+        .search-options input {
+            width: 35%;
+        }
+        .search-options button {
+            padding: 10px 20px;
+            background-color: #66bb6a; /* Light green button */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .search-options button:hover {
+            background-color: #388e3c; /* Dark green hover effect */
+        }
+        .clinic-list {
+            margin-top: 30px;
+        }
+        .clinic-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #ccc;
+        }
+        .clinic-item img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+        .clinic-details {
+            flex-grow: 1;
+            margin-left: 20px;
+        }
+        .clinic-details h3 {
+            margin: 0 0 5px 0;
+            color: #388e3c;
+        }
+        .clinic-details p {
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+        }
+        .book-btn {
+            padding: 8px 16px;
+            background-color: #66bb6a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .book-btn:hover {
+            background-color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Find a Clinic</h1>
+        <div class="search-options">
+            <select>
+                <option value="location">Location</option>
+                <option value="name">Name</option>
+                <option value="specialization">Specialization</option>
+            </select>
+            <select>
+                <option value="" disabled selected>States</option>
+                <option value="andaman">Andaman and Nicobar</option>
+                <option value="andhra">Andhra Pradesh</option>
+                <option value="arunachal">Arunachal Pradesh</option>
+                <option value="assam">Assam</option>
+                <option value="bihar">Bihar</option>
+                <option value="chandigarh">Chandigarh</option>
+                <option value="chhattisgarh">Chhattisgarh</option>
+                <option value="dadar">Dadra and Nagar Haveli and Daman and Diu</option>
+                <option value="delhi">Delhi</option>
+                <option value="goa">Goa</option>
+                <option value="gujarat">Gujarat</option>
+                <option value="haryana">Haryana</option>
+                <option value="himachal">Himachal Pradesh</option>
+                <option value="jammu">Jammu and Kashmir</option>
+                <option value="jharkhand">Jharkhand</option>
+                <option value="karnataka">Karnataka</option>
+                <option value="kerala">Kerala</option>
+                <option value="ladakh">Ladakh</option>
+                <option value="lakshadweep">Lakshadweep</option>
+                <option value="madhya">Madhya Pradesh</option>
+                <option value="maharashtra">Maharashtra</option>
+                <option value="manipur">Manipur</option>
+                <option value="meghalaya">Meghalaya</option>
+                <option value="mizoram">Mizoram</option>
+                <option value="nagaland">Nagaland</option>
+                <option value="odisha">Odisha</option>
+                <option value="puducherry">Puducherry</option>
+                <option value="punjab">Punjab</option>
+                <option value="rajasthan">Rajasthan</option>
+                <option value="sikkim">Sikkim</option>
+                <option value="tamilnadu">Tamil Nadu</option>
+                <option value="telangana">Telangana</option>
+                <option value="tripura">Tripura</option>
+                <option value="uttarakhand">Uttarakhand</option>
+                <option value="uttarpradesh">Uttar Pradesh</option>
+                <option value="westbengal">West Bengal</option>
+            </select>
+            <input type="text" placeholder="Search all clinics">
+            <button>Search</button>
+        </div>
+
+        <!-- Clinic List -->
+        <div class="clinic-list">
+            <div class="clinic-item">
+                <img src="https://via.placeholder.com/60" alt="Clinic Photo">
+                <div class="clinic-details">
+                    <h3>Sunrise Clinic</h3>
+                    <p>123 Health Avenue, Delhi</p>
+                </div>
+                <button class="book-btn">Book Appointment</button>
+            </div>
+            <div class="clinic-item">
+                <img src="https://via.placeholder.com/60" alt="Clinic Photo">
+                <div class="clinic-details">
+                    <h3>Green Valley Clinic</h3>
+                    <p>456 Wellness Street, Mumbai</p>
+                </div>
+                <button class="book-btn">Book Appointment</button>
+            </div>
+            <div class="clinic-item">
+                <img src="https://via.placeholder.com/60" alt="Clinic Photo">
+                <div class="clinic-details">
+                    <h3>Heart Care Clinic</h3>
+                    <p>789 Care Road, Bangalore</p>
+                </div>
+                <button class="book-btn">Book Appointment</button>
+            </div>
+            <div class="clinic-item">
+                <img src="https://via.placeholder.com/60" alt="Clinic Photo">
+                <div class="clinic-details">
+                    <h3>LifeLine Clinic</h3>
+                    <p>101 Wellness Blvd, Chennai</p>
+                </div>
+                <button class="book-btn">Book Appointment</button>
+            </div>
+            <div class="clinic-item">
+                <img src="https://via.placeholder.com/60" alt="Clinic Photo">
+                <div class="clinic-details">
+                    <h3>Smile Dental Clinic</h3>
+                    <p>202 Happy Teeth Lane, Kolkata</p>
+                </div>
+                <button class="book-btn">Book Appointment</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>FORM</title>
+    <link rel="stylesheet" href="patient.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="boxed">
+        <form>
+            <h1>Book an Appointment</h1>
+            <div id="tags">
+                <input id="info" type="text" required placeholder="First Name" />
+                <input id="info" type="text" required placeholder="Last Name" />
+            </div>
+            <div id="tags">
+                <input id="info" type="email" required placeholder="Email" />
+                <input id="info" type="tel" required placeholder="Phone No." />
+            </div>
+            <div id="tags">
+                <input id="info" type="text" required placeholder="Date of Birth" placeholder="Date"
+                    onblur="(this.type='text')" onfocus="(this.type='date')" />
+
+                <select id="dropdown" name="rating" required>
+                    <option id="select gender">Select Gender</option>
+                    <option id="Bad">Bad</option>
+                    <option id="Average">Average</option>
+                    <option id="Good">Good</option>
+                    <option id="My no. 1">My No.1</option>
+                </select>
+            </div>
+
+            <div id="tags">
+                <select id="dropdown" name="rating" required>
+                    <option id="select city">Select City</option>
+                    <option id="Bad">Bad</option>
+                    <option id="Average">Average</option>
+                    <option id="Good">Good</option>
+                    <option id="My no. 1">My No.1</option>
+                </select>
+
+                <select id="dropdown" name="rating" required>
+                    <option id="select a clinic">Select a Clinic</option>
+                    <option id="Bad">Bad</option>
+                    <option id="Average">Average</option>
+                    <option id="Good">Good</option>
+                    <option id="My no. 1">My No.1</option>
+                </select>
+            </div>
+
+            <div id="tags">
+                <select id="dropdown" name="rating" required>
+                    <option id="select speciality">Select Speciality</option>
+                    <option id="Bad">Bad</option>
+                    <option id="Average">Average</option>
+                    <option id="Good">Good</option>
+                    <option id="My no. 1">My No.1</option>
+                </select>
+                </select>
+
+                <select id="dropdown" name="rating" required>
+                    <option id="select your doctor">Select your Doctor</option>
+                    <option id="Bad">Bad</option>
+                    <option id="Average">Average</option>
+                    <option id="Good">Good</option>
+                    <option id="My no. 1">My No.1</option>
+                </select>
+            </div>
+
+            <div id="tags">
+                <input id="info" type="text" required placeholder="Select Date " onblur="(this.type='text')"
+                    onfocus="(this.type='date')" />
+
+                <select id="dropdown" name="rating" required>
+                    <option id="select a slot">Select a Slot</option>
+                    <option id="Bad">Bad</option>
+                    <option id="Average">Average</option>
+                    <option id="Good">Good</option>
+                    <option id="My no. 1">My No.1</option>
+                </select>
+            </div>
+
+            <select id="dropdowns" class="drop" name="rating" required>
+                <option id="select mode">Select Mode</option>
+                <option id="Bad">Bad</option>
+                <option id="Average">Average</option>
+                <option id="Good">Good</option>
+                <option id="My no. 1">My No.1</option>
+            </select>
+            <div id="box"></div>
+            <input id="myinput" type="checkbox" />
+            <label for="myinput" class="indented-checkbox-text"> - I Agree "Patient Information Consent"</label>
+    
+            <div class="btns">
+                <button name="submit" class="action_btn submit" type="submit" value="Submit"
+                onclick="myFunction()">Submit</button>
+                    <button name="submit" class="action_btn cancel" type="submit" value="Cancel"
+                onclick="myFunction2()">Cancel</button>
+              
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+    
+</body>
+
+</html>

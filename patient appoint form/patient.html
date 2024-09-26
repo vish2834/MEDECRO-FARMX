@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Book an Appointment</title>
+    <link rel="stylesheet" href="patient.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Basic styling for the logo */
+        #logo {
+            width: 50px;
+            /* Adjust size as needed */
+            position: absolute;
+            /* Position it in the top corner */
+            top: 10px;
+            /* Distance from the top */
+            left: 10px;
+            /* Distance from the left */
+        }
+
+        #boxed {
+            width: 400px;
+            /* Maintain original width */
+            margin: 0 auto;
+            /* Center the form */
+            padding-top: 60px;
+            /* Space for the logo */
+            position: relative;
+            /* Needed for positioning inside the box */
+        }
+
+        #info {
+            width: calc(100% - 20px);
+            /* Full width minus padding */
+            margin: 10px 0;
+            /* Space between inputs */
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img id="logo" src="logo.jpeg-removebg-preview.png" alt="Logo" />
+    <div id="boxed">
+        <form onsubmit="event.preventDefault(); myFunction();">
+            <h1>Book an Appointment</h1>
+            <div id="tags">
+                <input id="info" type="text" required placeholder="First Name" />
+                <input id="info" type="text" required placeholder="Last Name" />
+            </div>
+            <div id="tags">
+                <input id="info" type="email" required placeholder="Email" />
+                <input id="info" type="tel" required placeholder="Phone No." />
+            </div>
+            <div id="tags">
+                <input id="info" type="text" required placeholder="Date of Birth" onblur="(this.type='text')"
+                    onfocus="(this.type='date')" />
+
+                <select id="dropdown" name="gender" required>
+                    <option id="select gender">Select Gender</option>
+                    <option id="Male">Male</option>
+                    <option id="Female">Female</option>
+                    <option id="Others">Others</option>
+                </select>
+            </div>
+
+            <div id="tags">
+                <select id="dropdown" name="city" required>
+                    <option id="select city">Select City</option>
+                    <option id="Delhi">Delhi</option>
+                    <option id="Gurgaon">Gurgaon</option>
+                    <option id="Farukhnagar">Farukhnagar</option>
+                    <option id="Noida">Noida</option>
+                </select>
+
+                <select id="dropdown" name="clinic" required>
+                    <option id="select a clinic">Select a Clinic</option>
+                    <option id="Signature Clinic">Signature Clinic</option>
+                    <option id="Deepak Hospital">Deepak Hospital</option>
+                    <option id="Vishal Hospital">Vishal Hospital</option>
+                    <option id="Others">Others</option>
+                </select>
+            </div>
+
+            <div id="tags">
+                <select id="dropdown" name="speciality" required>
+                    <option id="select speciality">Select Speciality</option>
+                    <option id="Dermatologist">Dermatologist</option>
+                    <option id="General Surgeon">General Surgeon</option>
+                    <option id="Gynaecologist">Gynaecologist</option>
+                    <option id="Many more!">Many more!</option>
+                </select>
+
+                <select id="dropdown" name="doctor" required>
+                    <option id="select your doctor">Select your Doctor</option>
+                    <option id="Dr. Chandresh">Dr. Chandresh</option>
+                    <option id="Dr. Chauhan">Dr. Chauhan</option>
+                    <option id="Dr. Phore">Dr. Phore</option>
+                    <option id="Any other">Any other</option>
+                </select>
+            </div>
+
+            <div id="tags">
+                <input id="info" type="text" required placeholder="Select Date" onblur="(this.type='text')"
+                    onfocus="(this.type='date')" />
+
+                <select id="dropdown" name="slot" required>
+                    <option id="select a slot">Select a Slot</option>
+                    <option id="Morning">Morning</option>
+                    <option id="Afternoon">Afternoon</option>
+                    <option id="Evening">Evening</option>
+                    <option id="Anytime">Anytime</option>
+                </select>
+            </div>
+
+            <select id="dropdowns" class="drop" name="mode" required>
+                <option id="select mode">Select Mode</option>
+                <option id="In-person">In-person</option>
+                <option id="Online">Online</option>
+            </select>
+            <div id="box"></div>
+            <input id="myinput" type="checkbox" />
+            <label for="myinput" class="indented-checkbox-text"> - I Agree "Patient Information Consent"</label>
+
+            <div class="btns">
+                <button name="submit" class="action_btn submit" type="submit">Submit</button>
+                <button name="cancel" class="action_btn cancel" type="button" onclick="myFunction2()">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Div to display patient details -->
+    <div id="patientDetails"></div>
+
+    <script src="patient.js"></script>
+</body>
+
+</html>

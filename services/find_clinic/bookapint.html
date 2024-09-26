@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #e3f2fd, #ffffff); /* Soft blue gradient background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            background-color: #fff; /* White background */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #0d47a1; /* Dark blue color */
+            margin-bottom: 20px;
+        }
+        .form-control {
+            background-color: #e3f2fd; /* Light blue background for inputs */
+            border: 1px solid #ccc;
+        }
+        .btn-primary {
+            background-color: #42a5f5; /* Light blue button */
+            border-color: #42a5f5;
+        }
+        .btn-primary:hover {
+            background-color: #0d47a1; /* Dark blue hover effect */
+        }
+        .btn-success {
+            background-color: #0d47a1; /* Dark blue button */
+            border-color: #0d47a1;
+        }
+        .btn-success:hover {
+            background-color: #0a3790; /* Slightly darker hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Book Appointment</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+            </div>
+            <div class="form-group">
+                <label for="service">Select Service:</label>
+                <select class="form-control" id="service">
+                    <option>Book an Appointment</option>
+                    <option>Video Consultation</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="sendOTP()">Send OTP</button>
+            <div class="form-group mt-3">
+                <label for="otp">Enter OTP:</label>
+                <input type="text" class="form-control" id="otp" placeholder="Enter the OTP">
+            </div>
+            <button type="submit" class="btn btn-success">Submit Request</button>
+        </form>
+    </div>
+
+    <script>
+        function sendOTP() {
+            alert('OTP sent to your phone number!');
+        }
+    </script>
+</body>
+</html>

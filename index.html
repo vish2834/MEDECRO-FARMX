@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CARE CONNECT</title>
+  <link rel="stylesheet" href="./MAIN-CODE/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="./MAIN-CODE/script.js"></script>
+</head>
+
+<body onload="demoData()" beforeunload="demoDataDestroy()">
+
+  <header>
+    <nav>
+      <ul class='nav-bar'>
+        <input type='checkbox' id='check' />
+        <div class="logo">
+          <img src="./MAIN-CODE/images/logo.png" alt="Logo" />
+        </div>
+        <span class="menu">
+          <li><a href="#appointment">Home</a></li>
+          <li><a href="#appointment">About</a></li>
+          <li><a href="#services-location"> Our Services</a></li>
+           <!-- Login Dropdown Menu -->
+      <li class="login" id="homelogin">
+        <a href="#">Login</a>
+        <div class="dropdown-content">
+          <a href="./doctor-login/index.html" target="_blank">For a Doctor</a> <!-- Replace with actual link -->
+          <a href="./login/login.html" target="_blank">For a Patient</a> <!-- Replace with actual link -->
+        </div>
+      </li>
+         
+          <!-- Close button for the hamburger menu -->
+          <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+        </span>
+        <!-- Open button for the hamburger menu -->
+        <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- Main Content -->
+  <main>
+    <div id="home-loaction" class="content">
+      <div class="head">
+        <h1>
+          Revolution in <br />
+          Healthcare
+        </h1>
+      </div>
+      <div class="off">
+        <p>CARE CONNECT</p>
+      </div>
+      <div class="buttons">
+      <a class="one" href="#about">ABOUT</a> 
+      <a class="two" href="./services/find_clinic/findclinic.html">FIND CLINIC</a> 
+      </div>
+    </div>
+  </main>
+
+  <!-- main section ends here  -->
+
+  <!-- about section -->
+
+  <div id="appointment" class="about_us-section">
+    <div class="row">
+      <!-- Content Section (will be on the left on larger screens) -->
+      <div id="about" class="column content-col">
+        <h3>About Us</h3>
+        <p>
+          The vision of CareConnect website is to revolutionize the Indian
+          healthcare landscape by empowering healthcare providers with
+          innovative technology, streamlined workflows, and data-driven
+          insights. By equipping doctors, nurses, and other healthcare
+          professionals with cutting-edge digital solutions, we aim to enhance
+          their ability to deliver exceptional patient care, improving health
+          outcomes, patient satisfaction, and overall well-being. And after
+          implementation of all these we want that patients should be the only
+          priority of the health clinics doctors and staff as we help them to
+          keep patients records safe
+        </p>
+      </div>
+
+      <!-- Image Section (will be on the right on larger screens) -->
+      <div sr class="column img-section">
+        <img
+          style="box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;"
+          class="mypic-section" src="./MAIN-CODE/images/desk image.jpg" alt="Profile Image" />
+      </div>
+    </div>
+  </div>
+
+  <!-- book an appointment section starts here -->
+  <section class="doctor-section">
+    <div class="dr-content">
+      <img
+        src="https://img.freepik.com/free-vector/appointment-booking-with-smartphone_23-2148567481.jpg?ga=GA1.1.246363009.1725193313&semt=ais_hybrid"
+        alt="Doctor Image" class="doctor-image" />
+      <h2>Need a Doctor?</h2>
+      <a  href="./services/find_clinic/bookapint.html" class="appointment-btn">Book an Appointment</a>
+    </div>
+  </section>
+
+  <!-- appointment  end here    -->
+  <section id="services-location" class="services">
+    <h2>Our Services</h2>
+    <div class="services-container">
+      <div class="service-box">
+        <div class="service-icon service-1"></div>
+        <a  class="appointment-button" href="./services/find_clinic/bookapint.html">Appointment Scheduling</a> 
+        <!-- <button type="button" class="service-box-btn">Appointment Scheduling</button> -->
+      </div>
+
+      <div class="service-box">
+        <div class="service-icon service-2"></div>
+        <a  class="appointment-button" href="./services/find_clinic/medicalrecord.html">Medical Records</a> 
+        <!-- <button type="button" class="service-box-btn">Medical Records</button> -->
+      </div>
+
+      <div class="service-box">
+        <div class="service-icon service-3"></div>
+        <a target="_blank" class="appointment-button" href="./services/find_clinic/findclinic.html">Find a Clinic</a> 
+        <!-- <button type="button" class="service-box-btn">Find a Clinic</button> -->
+      </div>
+
+      <div class="service-box">
+        <div class="service-icon service-4"></div>
+        <a target="_blank" class="appointment-button" href="./services/billings.html">Health Billing</a> 
+        <!-- <button type="button" class="service-box-btn">Health Billing</button> -->
+      </div>
+
+      <div class="service-box">
+        <div class="service-icon service-5"></div>
+        <a target="_blank" class="appointment-button" href="/services/find_clinic/bookapint.html">Precription-Managment</a> 
+        <!-- <button type="button" class="service-box-btn">Precription-Managment</button> -->
+      </div>
+
+      <div class="service-box">
+        <div class="service-icon service-6"></div>
+        <a target="_blank" class="appointment-button" href="/services/find_clinic/bookapint.html">Virtual Health Consultation</a> 
+        <!-- <button type="button" class="service-box-btn">Virtual Health Consultation</button> -->
+      </div>
+    </div>
+  </section>
+  <!-- service scion ends -->
+
+  <!-- crousel -->
+  <div class="mainpcrousl" style="
+ background-color: var(--green);">
+    <div class="carousel-container">
+      <span>Specialised Doctor Near You</span>
+      <div class="carousel-track">
+        <div class="card">
+          <img src="./MAIN-CODE/images/cardiologist.jpg" alt="Card Image">
+          <h3>Cardiologist</h3>
+          <a target="_blank" class="map-link" href="https://www.google.com/maps/search/Cardiologist/">Locate On Map</a>
+        </div>
+        <div class="card">
+          <img src="./MAIN-CODE/images/dermatologist.jpg" alt="Card Image">
+          <h3>Dermatologist</h3>
+          <a target="_blank" class="map-link" href="https://www.google.com/maps/search/Dermatologist/">Locate On Map</a>
+        </div>
+        <div class="card">
+          <img src="./MAIN-CODE/images/dietician.jpg" alt="Card Image">
+          <h3>Dietician</h3>
+          <a target="_blank" class="map-link" href="https://www.google.com/maps/search/Dietician/">Locate On Map</a>
+        </div>
+        <div class="card">
+          <img src="./MAIN-CODE/images/neurologist).jpg" alt="Card Image">
+          <h3>Neurologist</h3>
+          <a target="_blank" class="map-link" href="https://www.google.com/maps/search/Neurologist/">Locate On Map</a>
+        </div>
+        <div class="card">
+          <img src="./MAIN-CODE/images/pediatrician.jpg" alt="Card Image">
+          <h3>Pediatrician</h3>
+          <a target="_blank" class="map-link" href="https://www.google.com/maps/search/Pediatrician/">Locate On Map</a>
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+
+  <!-- extra section -->
+  <div class="care-connect-section">
+    <div class="care-connect-content">
+      <h1>CARE CONNECT</h1>
+      <p>At Care Connect, we understand the importance of keeping your medical records organized, secure, and easily
+        accessible. Our system is designed to streamline the management of your healthcare data, ensuring it's always at
+        your fingertips when you need it.</p>
+    </div>
+  </div>
+
+  <div class="full-appoint">
+    <div class="booking-section">
+      <div class="booking-content">
+        <h2>BOOK APPOINTMENT</h2>
+        <p>Book your appointment effortlessly with our easy-to-use online scheduling system. Choose your preferred
+          doctor, date, and time, and receive instant confirmation. Prioritize your health with seamless, hassle-free
+          bookings.</p>
+        <!-- <button class="appointment-button">Appointment Booking</button> -->
+        <a target="_blank" class="appointment-button" href="./patient and clinic/clinic.html">Appointment Scheduling</a> 
+
+      </div>
+      <div class="booking-image">
+        <img
+          src="https://img.freepik.com/free-vector/appointment-booking-with-calendar-man_23-2148557562.jpg?semt=ais_hybrid"
+          alt="Appointment Image">
+      </div>
+    </div>
+  </div>
+
+  <div class="full-appoint">
+    <div class="booking-section app">
+      <div class="booking-image">
+        <img
+          src="https://img.freepik.com/premium-vector/man-sits-front-computer-with-green-key_1230457-44036.jpg?semt=ais_hybrid"
+          alt="Appointment Image">
+      </div>
+      <div class="booking-content">
+        <h2>TRACK YOUR MONTHLY HEALTHCARE BILLING</h2>
+        <p>Manage your healthcare expenses with our streamlined monthly billing service. Get clear, detailed invoices,
+          track payments easily, and enjoy hassle-free transactions. Stay organized and stress-free with automated
+          billing solutions.</p>
+        <!-- <button class="appointment-button">MONTHLY BILLING</button> -->
+        <a target="_blank" class="appointment-button" href="./services/billings.html">Health Billing</a> 
+
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard">
+    <h2>Personalized Dashboard</h2>
+    <div class="dashboard-options">
+      <div class="option">
+        <img
+          src="https://img.freepik.com/premium-photo/3d-render-caucasian-male-doctor-wears-glasses-holds-blue-clipboard-medical-clip-art-isolated-blue-background-health-insurance-concept-professional-therapist-hospital-assistant_1254992-238176.jpg?semt=ais_hybrid"
+          alt="Doctors">
+        <a target="_blank" class="bttn" href="./doctor-login/index.html">For Doctors</a> 
+      </div>
+      <div class="option">
+        <img
+          src="https://img.freepik.com/free-photo/niece-hugging-sick-woman-family-visit-hospital-ward-child-mother-visiting-retired-patient-with-disease-hospitalized-person-enjoying-chat-with-young-girl-helping-with-recovery_482257-35247.jpg?semt=ais_hybrid"
+          alt="Patients">
+          <a target="_blank" class="bttn" href="./login/login.html">For Patient</a> 
+      </div>
+    </div>
+  </div>
+
+  <!-- ends here extra -->
+
+  <!-- ends here crousel -->
+
+  <!-- Footer Section starts here -->
+  <footer>
+
+    <footer id="footer-loaction" class="footer">
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <ul>
+          <li>Email: support@medicalapp.com</li>
+          <li>Phone: +1 (234) 567-8901</li>
+          <li>Address: 123 Medical Street, Health City</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home-loaction">Home</a></li>
+          <li><a href="#appointment">About Us</a></li>
+          <li><a href="#services-location">Services</a></li>
+          <li><a href="#footer-loaction">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+
+          <a target="_blank" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+          <a target="_blank" href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a>
+          <a target="_blank" href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+          <a target="_blank" href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+        </div>
+      </div>
+    </footer>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Medical App. All rights reserved.</p>
+    </div>
+
+  </footer>
+
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const cards = document.querySelectorAll('.card');
+    let currentIndex = 0;
+    const totalCards = cards.length;
+    const visibleCards = 3;  // Number of visible cards at once
+    const cardWidth = cards[0].offsetWidth + 20; // Card width + margin
+    let autoSlideInterval = setInterval(slideNext, 5000); // Auto slide every 5 seconds
+
+    function updateCarousel() {
+      const newPosition = -(currentIndex * cardWidth);
+      track.style.transform = `translateX(${newPosition}px)`;
+    }
+
+    function slideNext() {
+      if (currentIndex >= totalCards - visibleCards) {
+        currentIndex = 0; // Reset to first card
+      } else {
+        currentIndex++;
+      }
+      updateCarousel();
+    }
+
+    function slidePrev() {
+      if (currentIndex <= 0) {
+        currentIndex = totalCards - visibleCards; // Go to last set of cards
+      } else {
+        currentIndex--;
+      }
+      updateCarousel();
+    }
+
+    document.querySelector('.next').addEventListener('click', () => {
+      clearInterval(autoSlideInterval);
+      slideNext();
+      autoSlideInterval = setInterval(slideNext, 2000);
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+      clearInterval(autoSlideInterval);
+      slidePrev();
+      autoSlideInterval = setInterval(slideNext, 2000);
+    });
+
+    const current_user = JSON.parse(atob(localStorage.getItem("current_user")));
+
+    if(current_user.active){
+      document.getElementById("homelogin").style.display = "none";
+    }else{
+      document.getElementById("homelogin").style.display = "block";
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+/* General styles remain the same */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .logo img{
+    position: absolute;
+    box-shadow: 2px 2px 20px cyan;
+    border-radius: 50%;
+    top: 10px; /* Adjust for vertical positioning */
+    left: 10px; /* Adjust for horizontal positioning */
+    width: 50px; /* Set your desired width */
+    height: auto; /* Maintain aspect ratio */
+}
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #1a73e8, #25bbf2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-attachment: fixed;
+    color: #fff;
+    /* background-image: url("pexels-dana-tentis-118658-370799.jpg"); */
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+  }
+  
+  .form-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .form-toggle {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .form-toggle span {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .form-toggle .active {
+    background-color: #0b8457;
+    color: #fff;
+  }
+  
+  .form {
+    display: none;
+  }
+  
+  .form.active {
+    display: block;
+  }
+  
+  .textbox {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .textbox input {
+    width: 100%;
+    padding: 12px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #fff;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+  
+  .textbox input:focus {
+    border-color: #0b8457;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #e1c730;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #1bcb33;
+  }
+  
+  .bottom-links {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .bottom-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .bottom-links a:hover {
+    color: #9015ce;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 480px) {
+    .form-box {
+        padding: 30px;
+    }
+  
+    .form h2 {
+        font-size: 24px;
+    }
+  
+    .textbox input {
+        font-size: 14px;
+        color: beige;
+    }
+  
+    .btn {
+        font-size: 14px;
+    }
+  }
+  
+  /* Hide the inactive form */
+  .hidden {
+    display: none;
+  }

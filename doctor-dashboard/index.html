@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinic Management Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <div class="profile">
+        <img src="doctor-profile.jpg" alt="Doctor Profile" class="profile-pic">
+        <h3>Dr. John Doe</h3>
+        <p>Cardiologist</p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="./index.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li><a href="./apt.html"><i class="fas fa-calendar-check"></i> Appointments</a></li>
+          <li><a href="./patrac.html"><i class="fas fa-user-injured"></i> Patient Records</a></li>
+          <li><a href="./prec.html"><i class="fas fa-file-prescription"></i> Prescriptions</a></li>
+          <li><a href="./testres.html"><i class="fas fa-vials"></i> Test Results</a></li>
+          <li><a href="./msg.html"><i class="fas fa-envelope"></i> Messages</a></li>
+          <li><a href="./bill.html"><i class="fas fa-receipt"></i> Billing</a></li>
+          <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Mobile Toggle Menu -->
+    <div class="mobile-menu" onclick="toggleSidebar()">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Header -->
+      <header>
+        <h1>Welcome, Dr. John Doe</h1>
+        <div class="header-right">
+          <p>Thursday, Sep 26</p>
+          <i class="fas fa-bell notification-icon"></i>
+        </div>
+      </header>
+
+      <!-- Overview Cards -->
+      <div class="overview-cards">
+        <div class="card">
+          <i class="fas fa-calendar-check"></i>
+          <div>
+            <h3>Today's Appointments</h3>
+            <p>12 Appointments</p>
+          </div>
+        </div>
+        <div class="card">
+          <i class="fas fa-file-prescription"></i>
+          <div>
+            <h3>Pending Prescriptions</h3>
+            <p>8 Prescriptions</p>
+          </div>
+        </div>
+        <div class="card">
+          <i class="fas fa-vials"></i>
+          <div>
+            <h3>New Test Results</h3>
+            <p>5 Results</p>
+          </div>
+        </div>
+        <div class="card">
+          <i class="fas fa-receipt"></i>
+          <div>
+            <h3>Total Billing</h3>
+            <p>₹50,000 Collected</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Appointments Table -->
+      <div class="appointments-section">
+        <h2>Today's Appointments</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Patient Name</th>
+              <th>Time</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Smith</td>
+              <td>9:00 AM</td>
+              <td>In-person</td>
+              <td>Confirmed</td>
+              <td><button class="action-btn" onclick="openModal('John Smith')">View</button></td>
+            </tr>
+            <tr>
+              <td>Jane Doe</td>
+              <td>10:30 AM</td>
+              <td>Telehealth</td>
+              <td>Completed</td>
+              <td><button class="action-btn" onclick="openModal('Jane Doe')">View</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Modal script example (can be customized for patient detail view)
+    function openModal(patientName) {
+      alert("Viewing details for " + patientName);
+    }
+
+    // Toggle Sidebar on mobile
+    function toggleSidebar() {
+      var sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

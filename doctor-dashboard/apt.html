@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointments - Clinic Management</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar" id="sidebar">
+      <div class="profile">
+        <img src="doctor-profile.jpg" alt="Doctor Profile" class="profile-pic">
+        <h3>Dr. John Doe</h3>
+        <p>Cardiologist</p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li><a href="appointments.html" class="active"><i class="fas fa-calendar-check"></i> Appointments</a></li>
+          <li><a href="patient-records.html"><i class="fas fa-user-injured"></i> Patient Records</a></li>
+          <li><a href="prescriptions.html"><i class="fas fa-file-prescription"></i> Prescriptions</a></li>
+          <li><a href="test-results.html"><i class="fas fa-vials"></i> Test Results</a></li>
+          <li><a href="messages.html"><i class="fas fa-envelope"></i> Messages</a></li>
+          <li><a href="billing.html"><i class="fas fa-receipt"></i> Billing</a></li>
+          <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="main-content">
+      <header>
+        <h1>Today's Appointments</h1>
+      </header>
+
+      <div class="appointments-section">
+        <table>
+          <thead>
+            <tr>
+              <th>Patient Name</th>
+              <th>Time</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Smith</td>
+              <td>9:00 AM</td>
+              <td>In-person</td>
+              <td>Confirmed</td>
+              <td><button class="action-btn" onclick="openModal('John Smith')">View</button></td>
+            </tr>
+            <tr>
+              <td>Jane Doe</td>
+              <td>10:30 AM</td>
+              <td>Telehealth</td>
+              <td>Completed</td>
+              <td><button class="action-btn" onclick="openModal('Jane Doe')">View</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(patientName) {
+      alert("Viewing details for " + patientName);
+    }
+  </script>
+</body>
+</html>

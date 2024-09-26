@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby Clinics</title>
+    <link rel="stylesheet" href="clinic.css">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <!-- Logo Section -->
+            <div class="logo">
+                <img src="logo.jpeg-removebg-preview.png" alt="Logo">
+            </div>
+
+            <!-- Search Bar Section -->
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Enter location or clinic name"
+                    onkeyup="filterClinics()">
+                <button onclick="filterClinics()">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="clinic-list">
+            <div class="clinic" data-name="Dr Batras Healthcare" data-location="Gurgaon Sector 14">
+                <img src="batra clinic.jpeg" alt="Dr Batra's Logo">
+                <h2>Dr Batras Healthcare</h2>
+                <p>Location: Gurgaon Sector 14</p><i class="fa-solid fa-location-dot"></i>
+                <p>Rating<i class="fa-solid fa-star"></i>: <span class="rating">4.2</span> (1,272 Ratings)</p>
+                <button class="book-btn">Book Appointment</button>
+                <i class="fa-brands fa-whatsapp"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-solid fa-truck-medical"></i>
+            </div>
+
+            <div class="clinic" data-name="Panacea Homeopathic Clinic" data-location="Gurgaon Sector 23">
+                <img src="panacea clinic2.jpeg" alt="Panacea Logo">
+                <h2>Panacea Homeopathic Clinic</h2>
+                <p>Location: Gurgaon Sector 23</p><i class="fa-solid fa-location-dot"></i>
+                <p>Rating<i class="fa-solid fa-star"></i>: <span class="rating">4.3</span> (93 Ratings)</p>
+                <button class="book-btn">Book Appointment</button>
+                <i class="fa-brands fa-whatsapp"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-solid fa-truck-medical"></i>
+            </div>
+
+            <!-- New Clinic Entries -->
+
+            <div class="clinic" data-name="Medanta Clinic" data-location="Gurgaon Sector 38">
+                <img src="medanta clinic.jpeg" alt="Medanta Logo">
+                <h2>Medanta Clinic</h2>
+                <p>Location: Gurgaon Sector 38</p>
+                <p>Rating<i class="fa-solid fa-star"></i>: <span class="rating">4.5</span> (2,050 Ratings)</p>
+                <button class="book-btn">Book Appointment</button>
+                <i class="fa-brands fa-whatsapp"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-solid fa-truck-medical"></i>
+            </div>
+
+            <div class="clinic" data-name="Fortis Healthcare" data-location="Gurgaon Sector 44">
+                <img src="fortis clinic.jpeg" alt="Fortis Logo">
+                <h2>Fortis Healthcare</h2>
+                <p>Location: Gurgaon Sector 44</p><i class="fa-solid fa-location-dot"></i>
+                <p>Rating<i class="fa-solid fa-star"></i>: <span class="rating">4.4</span> (1,980 Ratings)</p>
+                <button class="book-btn">Book Appointment</button>
+                <i class="fa-brands fa-whatsapp"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-solid fa-truck-medical"></i>
+            </div>
+
+            <div class="clinic" data-name="Apollo Clinic" data-location="Gurgaon Sector 56">
+                <img src="apollo clinic.jpeg" alt="Apollo Logo">
+                <h2>Apollo Clinic</h2>
+                <p>Location: Gurgaon Sector 56</p><i class="fa-solid fa-location-dot"></i>
+                <p>Rating<i class="fa-solid fa-star"></i>: <span class="rating">4.1</span> (1,590 Ratings)</p>
+                <button class="book-btn">Book Appointment</button>
+                <i class="fa-brands fa-whatsapp"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-solid fa-truck-medical"></i>
+            </div>
+
+            <div class="clinic" data-name="Max Healthcare" data-location="Gurgaon Sector 45">
+                <img src="max clinic.jpeg" alt="Max Logo">
+                <h2>Max Healthcare</h2>
+                <p>Location: Gurgaon Sector 45</p><i class="fa-solid fa-location-dot"></i>
+                <p>Rating<i class="fa-solid fa-star"></i>: <span class="rating">4.6</span> (1,700 Ratings)</p>
+                <button class="book-btn">Book Appointment</button>
+                <i class="fa-brands fa-whatsapp"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-solid fa-truck-medical"></i>
+            </div>
+
+            <div class="clinic" data-name="Signature Hospital" data-location="Gurgaon Sector 23">
+                <img src="signature clinic.jpeg" alt="Signature Logo">
+                <h2>Signature Hospital</h2>
+                <p>Location: Gurgaon Sector 37</p><i class="fa-solid fa-location-dot"></i>
+                <p>Rating<i class="fa-solid fa-star"></i>: <span class="rating">4.3</span> (93 Ratings)</p>
+                <button class="book-btn">Book Appointment</button>
+                <i class="fa-brands fa-whatsapp"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-solid fa-truck-medical"></i>
+            </div>
+        </div>
+    </main>
+
+    <script src="clinic.js"></script>
+
+</body>
+
+</html>

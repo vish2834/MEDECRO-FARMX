@@ -1,0 +1,1193 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Garamond, sans-serif;
+}
+:root {
+  --green: #CCF783;;
+  --black: #323131;
+}
+
+body{
+  background-color: var(--black);
+  overflow-x: hidden;
+}
+/* navbar */
+.nav-bar {
+  height: 55px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  background-color: var(--color2);
+  padding: 0px 20px;
+  position: relative;
+  background-color: #3d3d3d;
+  margin-bottom: 0;
+}
+
+.logo img {
+  width: 40px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-grow: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu li {
+  margin-left: 30px;
+  font-size: 1.5em;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: white;
+  transition: 0.15s ease-in-out;
+  position: relative;
+}
+
+
+.menu li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color1);
+  transition: 0.15s ease-in-out;
+}
+
+.menu li a:hover:after {
+  width: 100%;
+}
+
+/* dropdwon */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #2B3E50;;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #2B3E50;
+  color: white;
+}
+
+.login:hover .dropdown-content {
+  display: block;
+}
+/* Hamburger and Close Menu Icons */
+.open-menu,
+.close-menu {
+  color: var(--color1);
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 100;
+  position: absolute;
+  display: none; /* Hidden by default */
+}
+
+.open-menu {
+  top: 15px;
+  right: 20px;
+}
+
+.close-menu {
+  top: 20px;
+  right: 20px;
+}
+
+#check {
+  display: none;
+}
+
+/* Responsive Navbar */
+@media (max-width: 920px) {
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 100;
+    background-color: var(--color2);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .menu li {
+    margin-top: 40px;
+  }
+
+  #check:checked ~ .menu {
+    right: 0;
+    background-color: #343434;
+  }
+
+  .open-menu,
+  .close-menu {
+    color: white;
+    display: block; /* Show icons on small screens */
+  }
+
+  #check:not(:checked) ~ .open-menu {
+    color: white;
+    display: block; /* Show hamburger icon when menu is closed */
+  }
+
+  #check:checked ~ .open-menu {
+    color: white;
+    display: none; /* Hide hamburger icon when menu is open */
+  }
+
+  #check:not(:checked) ~ .close-menu {
+    display: none; /* Hide close icon when menu is closed */
+  }
+
+  #check:checked ~ .close-menu {
+    display: block; /* Show close icon when menu is open */
+  }
+}
+
+/* Hide Hamburger on Larger Screens */
+@media (min-width: 921px) {
+  .open-menu, .close-menu {
+    display: none; /* Hide hamburger and close icons on larger screens */
+  }
+}
+
+.logo img {
+  height: 85px;
+  width: 95px;
+  cursor: pointer;
+}
+
+
+/* navbar ends here */
+
+/*⭐ Main Section Starts ⭐*/
+main {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(100deg, #404040 0%, #00000000 100%),
+    url("https://cdn.pixabay.com/photo/2017/03/14/03/20/woman-2141808_1280.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex !important;
+  flex-direction: column;
+  /* position :; */
+  top: 0;
+}
+.logcrdentials{
+  text-decoration: underline;
+  color: red;
+}
+
+
+/*⭐ Content Section starts here⭐ */
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  flex-grow: 1;
+}
+
+.head h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.off p {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.buttons .one,
+.buttons .two {
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  background-color: #404040;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.buttons .one:hover,
+.buttons .two:hover {
+  background-color: #575757;
+}
+
+/*⭐ Responsive Styles⭐ */
+@media (max-width: 800px) {
+  main {
+    height: auto;
+    padding: 0;
+    background-size: cover;
+  }
+}
+
+/* ⭐ Content Section Styling ⭐*/
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  color: white;
+  flex-grow: 1;
+  padding: 0 50px;
+}
+
+.head h1 {
+  font-size: 88px;
+  margin-bottom: 10px;
+}
+
+.off p {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  margin-bottom: 50px;
+}
+
+.buttons .one,
+.buttons .two {
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  background-color: #404040;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.buttons .one {
+  background-color: white;
+  color: black;
+  font-weight: 700;
+}
+
+.buttons .two {
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+.buttons .one:hover,
+.buttons .two:hover {
+  background-color: #575757;
+}
+
+/*⭐ Responsive Styles  ⭐*/
+@media (max-width: 800px) {
+  .content {
+    padding: 0 20px; /* Reduce padding on smaller screens */
+  }
+
+  .head h1 {
+    font-size: 32px; /* Adjust font size */
+  }
+
+  .off p {
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .buttons {
+    flex-direction: column; /* Stack buttons on smaller screens */
+  }
+
+  .buttons .one,
+  .buttons .two {
+    width: 100%;
+    margin-bottom: 10px; /* Add spacing between stacked buttons */
+  }
+}
+
+/* main section ends here */
+
+/* ⭐ about us  section⭐ */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.column {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  min-width: 300px; /* Ensure columns do not get too small */
+}
+
+.img-section {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-section img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive Adjustments for Main Content */
+@media (max-width: 768px) {
+  .column {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .img-section {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .hire-me,
+  .my-work {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+}
+
+.about_us-section {
+  padding: 40px 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #CCF783;
+
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  flex-direction: column;
+}
+.content-col h3 {
+  font-family: "ga", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 46px;
+  color: #444343;
+}
+.content-col p {
+  font-size: 25px;
+  text-align: justify;
+}
+
+.column {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  min-width: 300px;
+  text-align: center;
+}
+
+.img-section {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Button styling */
+.btn {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.hire-me,
+.my-work {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #131362;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive Adjustments for about us Section */
+@media (min-width: 768px) {
+  .row {
+    flex-direction: row; /* Aligns columns horizontally on larger screens */
+  }
+
+  .content-col {
+    order: 1; /* Default order for content section */
+  }
+
+  .img-section {
+    order: 0; /* Moves the image section to the left */
+    padding: 20px;
+    text-align: center;
+  }
+}
+
+/* appointment sratrs here */
+
+.doctor-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  text-align: center;
+  /* background-image: url("https://img.freepik.com/free-vector/neumorphic-style-blank-white-banner-with-slanting-lines-design_1017-53841.jpg?ga=GA1.2.246363009.1725193313&semt=ais_hybrid"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-color: var(--green); */
+  background-color: var(--black);
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+
+.dr-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.doctor-image {
+  margin-top:20px;
+  max-width: 200px;
+  width: 100%;
+  height: 130%;
+  border-radius: 50%;
+}
+
+.doctor-section h2 {
+  font-size: 4rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.appointment-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 1.9rem;
+  color: #3d3d3d;
+  font-weight: 800;
+  background-color: #8bc6ec;
+  background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
+  text-decoration: none;
+  border: none;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 30px;
+  
+}
+
+.appointment-btn:hover {
+  background-color: #004a99;
+  text-decoration: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .doctor-image {
+    max-width: 150px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .appointment-btn {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+/* appointmet section ends here */
+
+/*⭐ Services Section */
+.services {
+  padding: 50px;
+  text-align: center;
+  background-color: var(--black);
+}
+
+.services h2 {
+  color: #fbfbfb;
+  margin-bottom: 40px;
+  font-size: 60px;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  /* background-color: #CCF783; */
+
+}
+
+.service-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* background-color: #7a40e5; */
+  background-color: #CCF783;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  height: 350px;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+  height: 125px;
+  width: 125px;
+  margin: 0 auto 20px;
+  background-color: #e0f0e0;
+  border-radius: 50%;
+}
+
+.service-1 {
+  background-image: url("./images/appointnment-scheduling.png");
+  background-size: contain;
+  background-position: center;
+}
+
+.service-2 {
+  background-image: url("./images/medical-record.png");
+  background-size: contain;
+   background-position: center;
+}
+
+.service-3 {
+  background-image: url("./images/find-a-clinic.png");
+  background-size: contain;
+  background-position: center;
+}
+
+.service-4 {
+  background-image: url("./images/find-a-clinic.png");
+  background-size: contain;
+  background-position: center;
+}
+
+.service-5 {
+  background-image: url("./images/precription-managment.png");
+  background-size: contain;
+  background-position: center;
+}
+
+.service-6 {
+  background-image: url("./images/virtual-helath.png");
+  background-size: contain;
+  background-position: center;
+}
+
+.service-box-btn {
+  background-color: #272727;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.service-box-btn:hover {
+  background-color: #4b9461;
+}
+
+/*  service ends here */
+
+/*  crousel strats */
+.carousel-container {
+  width: 90%;
+  max-width: 1200px;
+  overflow: hidden;
+  margin: auto;
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: var(--green);
+}
+
+.carousel-container span{
+  color: var(--black);
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: ui-monospace;
+
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  margin-top: 40px;
+}
+
+.card {
+  flex: 1 0 30%; /* Show 2-3 cards based on screen size */
+  margin: 0 10px;
+  background-color: var(--black);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card h3 {
+  margin-top: 15px;
+  font-size: 2.8rem;
+  color: white;
+}
+
+.card p {
+  color: #777;
+  margin: 10px 0;
+}
+
+.card .map-link{
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .card {
+    flex: 1 0 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 1 0 90%;
+  }
+}
+
+/* Navigation Arrows (optional) */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 100;
+  font-size: 18px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* crousel ends here */
+
+/* extra section */
+
+
+.care-connect-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  color: white;
+  padding: 50px;
+  height: 100vh;
+}
+
+.care-connect-content {
+  max-width: 600px;
+  text-align: center;
+}
+
+.care-connect-content h1 {
+  font-size: 48px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.care-connect-content p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* Responsive Design */
+@media (min-width: 1024px) {
+  .care-connect-section {
+      height: 50vh;
+      padding: 100px 0;
+  }
+
+  .care-connect-content {
+      text-align: left;
+  }
+
+  .care-connect-content h1 {
+      font-size: 60px;
+  }
+
+  .care-connect-content p {
+      font-size: 20px;
+      line-height: 1.6;
+  }
+}
+
+@media (max-width: 768px) {
+  .care-connect-section {
+      padding: 30px;
+  }
+
+  .care-connect-content h1 {
+      font-size: 36px;
+  }
+
+  .care-connect-content p {
+      font-size: 16px;
+      line-height: 1.4;
+  }
+}
+
+.booking-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 40px;
+  background-color: #d8ff94;
+  border-radius: 15px;
+  max-width: 1200px;
+  margin: 50px auto;
+  gap: 30px;
+}
+
+.booking-content {
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.booking-content h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.booking-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.appointment-button {
+  background-color: #000;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+.appointment-button:hover {
+  background-color: #444;
+}
+
+.booking-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .booking-section {
+      grid-template-columns: 1fr;
+      text-align: center;
+  }
+
+  .booking-content {
+      text-align: center;
+  }
+
+  .booking-image img {
+      width: 80%;
+      margin: 0 auto;
+  }
+}
+
+.dashboard {
+  margin: 50px auto;
+  padding: 30px;
+  max-width: 1200px;
+  background-color: #000;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.dashboard h2 {
+  color: #d8ff94;
+  font-size: 28px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #d8ff94;
+  padding-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.dashboard-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.option {
+  background-color: #181818;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1;
+  min-width: 250px;
+  max-width: 400px;
+  margin: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #d8ff94;
+}
+
+.option:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 255, 0, 0.3);
+}
+
+.option img {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #d8ff94;
+}
+
+.option button {
+  background-color: #d8ff94;
+  color: #000;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin: auto;
+  display: flex;
+  font-weight: 800;
+}
+
+.option .bttn{
+  background-color: #d8ff94;
+  color: #000;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin: auto;
+  display: flex;
+  font-weight: 800;
+  width: 150px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.option  .bttn:hover{
+  text-decoration: none;
+}
+
+.option .bttn:hover {
+  background-color: #b8e080;
+}
+.option button:hover {
+  background-color: #b8e080;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 1024px) {
+  .dashboard-options {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+  }
+
+  .option {
+      width: 100%;
+  }
+
+  .option img {
+      width: 100px;
+      height: 100px;
+  }
+
+  .option button {
+      font-size: 14px;
+      padding: 8px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .option {
+      padding: 15px;
+  }
+
+  .option img {
+      width: 130px;
+      height: 130px;
+  }
+
+  .option button {
+      font-size: 12px;
+      padding: 6px 15px;
+      margin: auto;
+  }
+}
+
+
+/* ends here extra */
+
+/* footer code starts from here */
+
+.footer {
+  background-color: #2B3E50;
+  color: #FFFFFF;
+  padding: 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  margin: 20px;
+  min-width: 250px;
+}
+
+.footer-section h4 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #00BFA5;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.footer-section ul li a {
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #00BFA5;
+}
+
+.footer-section .social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-section .social-icons a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.footer-section .social-icons a:hover {
+  color: #00BFA5;
+}
+
+.footer-section p {
+  font-size: 14px;
+  margin-top: 20px;
+  color: #CCCCCC;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  color: #CCCCCC;
+  background-color: rgb(49, 44, 44);
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .footer-section {
+      margin: 20px 0;
+  }
+
+  .footer-section .social-icons{
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* fotter cards ends here  */
+
+
+
+
+/* serachbar code */
+
+.search-container {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#location-input {
+  padding: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+#find-clinic-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#clinic-results {
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.clinic {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.message {
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.message.info {
+  background-color: #e0f7fa;
+  color: #00796b;
+}
+
+.message.error {
+  background-color: #ffcdd2;
+  color: #c62828;
+}

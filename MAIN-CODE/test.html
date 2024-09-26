@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinic Finder with OpenStreetMap</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+        .clinic {
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+        }
+        .message {
+            margin: 10px;
+            padding: 10px;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Find Clinics Near You</h1>
+    <input type="text" id="location-input" placeholder="Enter location">
+    <button id="find-clinic-btn">Find Clinics</button>
+
+    <div id="clinic-results"></div>
+
+    <!-- OpenStreetMap -->
+    <div id="map"></div>
+
+    <!-- Leaflet.js -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="test.js"></script> <!-- Link to the JavaScript file -->
+</body>
+</html>

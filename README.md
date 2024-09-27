@@ -44,31 +44,6 @@ Here’s a sample README file for your GitHub repository for the *Care Connect* 
 - The system uses *local storage* to temporarily save data on the user's device. This allows for the retention of user-specific information between sessions, even without a traditional server-based database.
 
 
-
- Installation and Setup
-
-To get started with *Care Connect*, follow these steps:
-
-1. Clone the repository:
-   
-   git clone https://github.com/yourusername/care-connect.git
-   
-
-2. Open the project folder:
-   
-   cd care-connect
-   
-
-3. Open the index.html file in your browser:
-   
-   open index.html
-   
-   Or, simply double-click on index.html to launch the application in your default browser.
-
-4. No additional setup is required, as the application stores data in the browser's local storage.
-
- Usage
-
 Once the system is open in the browser, you can:
 
 - Create new patient profiles.
@@ -87,4 +62,7 @@ Once the system is open in the browser, you can:
 - Integrating with a server-based database for data persistence.
 - Adding email notifications for appointment reminders.
 - Implementing data encryption for added security.
+
+- Here is the link of prototype :-
+- 
 

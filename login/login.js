@@ -83,7 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Handle Login Form Submission
   loginForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    console.log("hello");
 
     const email = loginForm.querySelector("#email-login").value;
     const password = loginForm.querySelector("#pass-login").value;
@@ -97,9 +96,11 @@ document.addEventListener("DOMContentLoaded", () => {
   
 
       let users_data = JSON.parse(localStorage.getItem("user"));
+      
       if(Object.keys(users_data.patient.users).includes(email) || Object.keys(users_data.doctors.users).includes(email)){
         let userType = "";
         if(Object.keys(users_data.patient.users).includes(email)){
+          console.log("1",Object.keys(users_data.patient.users).includes(email) , Object.keys(users_data.doctors.users).includes(email))
           userType = users_data.patient;
           userType.users[email]['active'] = True;
           localStorage.setItem("current_user", JSON.stringify(userType.users[email]));
@@ -109,9 +110,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if(Object.keys(users_data.doctors.users).includes(email)){
+          console.log("2",Object.keys(users_data.patient.users).includes(email) , Object.keys(users_data.doctors.users).includes(email))
           userType = users_data.doctors;
-          userType.users[email]['active'] = True;
+          userType.users[email]['active'] = 'True';
           localStorage.setItem("current_user", JSON.stringify(userType.users[email]));
+
+          console.log("hello");
 
           messageBox("Login successful! User data saved.","info");
           window.location.href = "../doctor-dashboard/index.html";

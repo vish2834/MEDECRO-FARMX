@@ -9,7 +9,8 @@
     <style>
         /* Basic styling for the logo */
         #logo {
-            width: 50px;
+            box-shadow: 2px 2px 20px cyan;
+            width: 100px;
             /* Adjust size as needed */
             position: absolute;
             /* Position it in the top corner */
@@ -28,14 +29,6 @@
             /* Space for the logo */
             position: relative;
             /* Needed for positioning inside the box */
-        }
-
-        #info {
-            width: calc(100% - 20px);
-            /* Full width minus padding */
-            margin: 10px 0;
-            /* Space between inputs */
-            padding: 10px;
         }
     </style>
 </head>
@@ -135,6 +128,12 @@
     <div id="patientDetails"></div>
 
     <script src="patient.js"></script>
+    <script>
+        const current_user = JSON.parse(localStorage.getItem("current_user"));
+        if(!current_user.active){
+            window.location.href = window.location.origin;
+        }
+    </script>
 </body>
 
 </html>

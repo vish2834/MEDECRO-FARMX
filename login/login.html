@@ -12,22 +12,22 @@
 </head>
 
 <body>
-    
+    <div id="message-box"><span class="close" onclick="destroy()">x</span><H3 id="error-msg"></H3><H3 id="info-msg"></H3><H3 id="warning-msg"></H3></div>
     <div class="container">
         <div class="form-box">
             <div class="form-toggle">
-                <span id="loginToggle" class="active">Login</span>
-                <span id="signupToggle">Sign Up</span>
+                <span id="loginToggle">Login</span>
+                <span id="signupToggle" class="active">Sign Up</span>
             </div>
             <!-- Login Form -->
             <div id="loginForm" class="form">
                 <h2>Login</h2>
                 <form action="#">
                     <div class="textbox">
-                        <input type="text" placeholder="Username" required>
+                        <input type="text" id="email-login" placeholder="Email" required>
                     </div>
                     <div class="textbox">
-                        <input type="password" placeholder="Password" required>
+                        <input type="password" id="pass-login" placeholder="Password" required>
                     </div>
                     <button type="submit" class="btn">Login</button>
                     <div class="bottom-links">
@@ -40,18 +40,21 @@
                 <h2>Sign Up</h2>
                 <form action="#">
                     <div class="textbox">
-                        <input type="text" placeholder="Username" required>
+                        <input type="text" id="username" placeholder="Username" required>
                     </div>
                     <div class="textbox">
-                        <input type="email" placeholder="Email" required>
+                        <input type="email" id="email" placeholder="Email" required>
                     </div>
                     <div class="textbox">
-                        <input type="password" placeholder="Password" required>
+                        <input type="password" id="password" placeholder="Password" required>
                     </div>
                     <div class="textbox">
-                        <input type="password" placeholder="Confirm Password" required>
+                        <input type="password" id="confirm-password" placeholder="Confirm Password" required>
                     </div>
                     <button type="submit" class="btn">Sign Up</button>
+                    <div class="bottom-links">
+                        <a href="../doctor-login/index.html">Doctor? Sign up here</a>
+                    </div>
                     <div class="bottom-links">
                         <a href="#" id="switchToLogin">Already have an account? Login</a>
                     </div>
@@ -61,6 +64,7 @@
     </div>
 
     <script src="login.js"></script>
+    
 </body>
 
 </html>

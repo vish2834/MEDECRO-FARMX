@@ -19,7 +19,7 @@ document.getElementById('switchToLogin').addEventListener('click', function () {
   document.getElementById('signupToggle').classList.remove('active');
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {   
   const loginToggle = document.getElementById("loginToggle");
   const signupToggle = document.getElementById("signupToggle");
   const loginForm = document.getElementById("loginForm");
@@ -44,39 +44,109 @@ document.addEventListener("DOMContentLoaded", () => {
   signupForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const username = signupForm.querySelector("input[type='text']").value;
-    const email = signupForm.querySelector("input[type='email']").value;
-    const password = signupForm.querySelector("input[type='password']").value;
+    const username = signupForm.querySelector("#username").value;
+    const email = signupForm.querySelector("#email").value;
+    const password = signupForm.querySelector("#password").value;
+    const confpassword = signupForm.querySelector("#confirm-password").value;
 
-    const userData = {
-      username,
-      email,
-      password,
-      type: 'signup'
-    };
+    if(username && email && password && (password == confpassword)){
+      const userData = {
+        "username": username,
+        "email": email,
+        "password": password,
+      };
+  
+      let users_data = JSON.parse(localStorage.getItem("user"));
+      if(Object.keys(users_data.patient.users).includes(email) || Object.keys(users_data.doctors.users).includes(email)){
+          return messageBox("Email already registered.", "warning");
+      }else{
+          users_data.patient.users[email] = (userData);
 
-    // Store user data in local storage
-    localStorage.setItem('userData', JSON.stringify(userData));
-    alert("Sign Up successful! User data saved.");
-    signupForm.reset(); // Clear the form fields
+          localStorage.setItem("user", (JSON.stringify(users_data)));
+
+          messageBox("Sign Up successful! User data saved.", "info");
+          signupForm.reset(); // Clear the form fields
+
+          loginForm.classList.remove("hidden");
+          signupForm.classList.add("hidden");
+          loginToggle.classList.add("active");
+          signupToggle.classList.remove("active");
+
+          window.location.href = "../login/login.html"; // Replace with actual path
+      }
+      
+    }else{
+      return messageBox("Something is wrong please check filled form", "error");
+    }
   });
 
   // Handle Login Form Submission
   loginForm.addEventListener("submit", (event) => {
     event.preventDefault();
+    console.log("hello");
 
-    const username = loginForm.querySelector("input[type='text']").value;
-    const password = loginForm.querySelector("input[type='password']").value;
+    const email = loginForm.querySelector("#email-login").value;
+    const password = loginForm.querySelector("#pass-login").value;
+  
 
-    const userData = {
-      username,
-      password,
-      type: 'login'
-    };
+    if(email && password){
+      const userData = {
+        "email": email,
+        "password": password
+      };
+  
 
-    // Store user data in local storage
-    localStorage.setItem('userData', JSON.stringify(userData));
-    alert("Login successful! User data saved.");
-    loginForm.reset(); // Clear the form fields
+      let users_data = JSON.parse(localStorage.getItem("user"));
+      if(Object.keys(users_data.patient.users).includes(email) || Object.keys(users_data.doctors.users).includes(email)){
+        let userType = "";
+        if(Object.keys(users_data.patient.users).includes(email)){
+          userType = users_data.patient;
+          userType.users[email]['active'] = True;
+          localStorage.setItem("current_user", JSON.stringify(userType.users[email]));
+
+          messageBox("Login successful! User data saved.","info");
+          window.location.href = "../patientNclinic/patient/patient.html";
+        }
+
+        if(Object.keys(users_data.doctors.users).includes(email)){
+          userType = users_data.doctors;
+          userType.users[email]['active'] = True;
+          localStorage.setItem("current_user", JSON.stringify(userType.users[email]));
+
+          messageBox("Login successful! User data saved.","info");
+          window.location.href = "../doctor-dashboard/index.html";
+        }
+      }else{
+        return messageBox("Wrong Email", "error");
+      }
+
+      loginForm.reset(); // Clear the form fields
+   
+    }
   });
+
 });
+
+function destroy(){
+  document.getElementById(`message-box`).style.display = 'none';
+}
+
+function activate(){
+  document.getElementById(`message-box`).style.display = 'flex';
+}
+
+messageBox = (msg, msgType)=>{
+  activate();
+  let type = {
+    "info":"info-msg",
+    "error":"error-msg",
+    "warning":"warning-msg"
+  };
+  
+  let ele = document.getElementById(`${type[msgType]}`);
+  ele.innerText = msg;
+  ele.style.display = 'block';
+  
+}
+
+

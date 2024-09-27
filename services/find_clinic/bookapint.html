@@ -71,18 +71,22 @@
                     <option>Video Consultation</option>
                 </select>
             </div>
+<!--             
             <button type="button" class="btn btn-primary" onclick="sendOTP()">Send OTP</button>
             <div class="form-group mt-3">
                 <label for="otp">Enter OTP:</label>
                 <input type="text" class="form-control" id="otp" placeholder="Enter the OTP">
-            </div>
+            </div> -->
             <button type="submit" class="btn btn-success">Submit Request</button>
         </form>
     </div>
 
     <script>
-        function sendOTP() {
-            alert('OTP sent to your phone number!');
+          function loginCheck(){
+            const current_user = JSON.parse(localStorage.getItem("current_user"));
+            if(!current_user.active){
+                messageBox("You are not logged in.<br> <a href='../../login/login.html'>Login Here</a>", "info");
+            }
         }
     </script>
 </body>

@@ -13,8 +13,8 @@
     <div class="sidebar" id="sidebar">
       <div class="profile">
         <img src="doctor-profile.jpg" alt="Doctor Profile" class="profile-pic">
-        <h3>Dr. John Doe</h3>
-        <p>Cardiologist</p>
+        <h3 id="menu-name-show">Dr. John Doe</h3>
+        <p id="menu-department-show">Cardiologist</p>
       </div>
       <nav>
         <ul>
@@ -39,7 +39,7 @@
     <div class="main-content">
       <!-- Header -->
       <header>
-        <h1>Welcome, Dr. John Doe</h1>
+        <h1 id="header-name-show">Welcome, Dr. John Doe</h1>
         <div class="header-right">
           <p>Thursday, Sep 26</p>
           <i class="fas fa-bell notification-icon"></i>
@@ -113,6 +113,17 @@
   </div>
 
   <script>
+    const current_user = JSON.parse(localStorage.getItem("current_user"));
+    if(current_user.active){
+      console.log(current_user)
+      document.getElementById("menu-name-show").innerText.replace("name",);
+      document.getElementById("header-name-show").innerText.replace("name",);
+      document.getElementById("menu-department-show").replace("department",);
+    }else{
+      window.location.href = window.location.origin;
+    }
+
+
     // Modal script example (can be customized for patient detail view)
     function openModal(patientName) {
       alert("Viewing details for " + patientName);

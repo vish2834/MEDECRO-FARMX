@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Health Consultation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #ffffff); /* Light blue gradient */
+        }
+        .container {
+            margin-top: 50px;
+            max-width: 900px;
+        }
+        h1 {
+            text-align: center;
+            color: #00796b; /* Dark teal color */
+        }
+        .search-bar {
+            margin-bottom: 30px;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .consultation-item {
+            background-color: #ffffff; /* White background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .consultation-item:hover {
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            background-color: #f1f8e9; /* Light green background on hover */
+        }
+        .consultation-item img {
+            width: 80px; /* Image size */
+            height: 80px;
+            border-radius: 50%; /* Circular image */
+            margin-right: 20px;
+        }
+        .consultation-item h5 {
+            margin: 0;
+            color: #00796b;
+        }
+        .consultation-item p {
+            color: #555;
+        }
+        .btn-primary {
+            background-color: #4db6ac; /* Light teal button */
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #00695c; /* Dark teal hover effect */
+        }
+        .consultation-details {
+            margin-top: 10px;
+            color: #333;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .consultation-details strong {
+            color: #00796b;
+        }
+        /* Calendar Input */
+        .calendar {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Virtual Health Consultations</h1>
+
+        <!-- Search Box -->
+        <div class="search-bar">
+            <input type="text" id="searchBox" placeholder="Search consultations..." onkeyup="searchConsultations()">
+        </div>
+
+        <!-- Consultation Items -->
+        <div id="consultationList">
+            <div class="consultation-item">
+                <img src="https://via.placeholder.com/80" alt="Video Call Image">
+                <div>
+                    <h5>Consultation with Dr. Sarah Williams</h5>
+                    <p><strong>Date:</strong> 2024-09-20</p>
+                    <p><strong>Time:</strong> 11:00 AM</p>
+                    <p><strong>Type of Consultation:</strong> Video Call</p>
+                    <div class="consultation-details">
+                        <strong>Session Summary:</strong> Reviewed recent MRI results. No significant issues found, but recommended monitoring symptoms.<br>
+                        <strong>Doctor's Recommendation:</strong> Continue prescribed treatment and book a follow-up after six months.<br>
+                        <strong>Platform Used:</strong> Zoom<br>
+                        <strong>Next Steps:</strong> Follow-up in March 2025.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="consultation-item">
+                <img src="https://via.placeholder.com/80" alt="Chat Image">
+                <div>
+                    <h5>Consultation with Dr. John Miller</h5>
+                    <p><strong>Date:</strong> 2024-08-28</p>
+                    <p><strong>Time:</strong> 4:15 PM</p>
+                    <p><strong>Type of Consultation:</strong> Text Chat</p>
+                    <div class="consultation-details">
+                        <strong>Session Summary:</strong> Discussed persistent back pain. Suggested physiotherapy and prescribed pain relief medication.<br>
+                        <strong>Doctor's Recommendation:</strong> Attend regular physiotherapy sessions for the next 3 months.<br>
+                        <strong>Platform Used:</strong> MyHealth App Chat<br>
+                        <strong>Next Steps:</strong> Review in three months, or sooner if symptoms worsen.
+                    </div>
+                </div>
+            </div>
+
+            <div class="consultation-item">
+                <img src="https://via.placeholder.com/80" alt="Phone Call Image">
+                <div>
+                    <h5>Consultation with Dr. Emily Carter</h5>
+                    <p><strong>Date:</strong> 2024-07-18</p>
+                    <p><strong>Time:</strong> 2:00 PM</p>
+                    <p><strong>Type of Consultation:</strong> Phone Call</p>
+                    <div class="consultation-details">
+                        <strong>Session Summary:</strong> Managed medication adjustments for hypertension. Updated prescription for better control.<br>
+                        <strong>Doctor's Recommendation:</strong> Monitor blood pressure regularly and report any abnormal readings.<br>
+                        <strong>Platform Used:</strong> Phone Call<br>
+                        <strong>Next Steps:</strong> Scheduled follow-up call in 6 weeks.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="consultation-item">
+                <img src="https://via.placeholder.com/80" alt="Video Call Image">
+                <div>
+                    <h5>Consultation with Dr. Michael Johnson</h5>
+                    <p><strong>Date:</strong> 2024-06-25</p>
+                    <p><strong>Time:</strong> 1:00 PM</p>
+                    <p><strong>Type of Consultation:</strong> Video Call</p>
+                    <div class="consultation-details">
+                        <strong>Session Summary:</strong> Follow-up for post-operative recovery. Reviewed wound healing, confirmed no complications.<br>
+                        <strong>Doctor's Recommendation:</strong> Continue current recovery plan, return for a final check-up in one month.<br>
+                        <strong>Platform Used:</strong> Microsoft Teams<br>
+                        <strong>Next Steps:</strong> Next consultation in one month.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calendar for Scheduling New Consultation -->
+        <div class="calendar text-center">
+            <label for="appointmentDate"><strong>Schedule a New Consultation:</strong></label><br>
+            <input type="date" id="appointmentDate" name="appointmentDate">
+        </div>
+
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" onclick="scheduleConsultation()">Schedule New Consultation</button>
+        </div>
+    </div>
+
+    <script>
+        // Search Functionality
+        function searchConsultations() {
+            let input = document.getElementById('searchBox').value.toLowerCase();
+            let items = document.getElementsByClassName('consultation-item');
+
+            for (let i = 0; i < items.length; i++) {
+                let consultationText = items[i].innerText.toLowerCase();
+                if (consultationText.includes(input)) {
+                    items[i].style.display = "flex";
+                } else {
+                    items[i].style.display = "none";
+                }
+            }
+        }
+
+        // Schedule Consultation Button (Mock Function)
+        function scheduleConsultation() {
+            let selectedDate = document.getElementById('appointmentDate').value;
+            if (selectedDate) {
+                alert('Consultation scheduled for ' + selectedDate);
+            } else {
+                alert('Please select a date for the consultation.');
+            }
+        }
+    </script>
+    
+</body>
+</html>

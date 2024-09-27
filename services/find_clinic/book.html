@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Appointment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative; /* Relative positioning for absolute elements */
+            animation: fadeIn 1s ease; /* Fade-in animation */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .doctor-info {
+            display: flex; /* Use flexbox for layout */
+            align-items: center; /* Center vertically */
+            margin-bottom: 20px; /* Space between doctor info and heading */
+            width: 100%; /* Full width for responsiveness */
+        }
+
+        .doctor-info img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin-right: 20px; /* Space between image and text */
+            transition: transform 0.3s; /* Scale on hover */
+        }
+
+        .doctor-info .info {
+            text-align: left; /* Align text to the left */
+            color: #333; /* Text color */
+        }
+
+        .doctor-info h2, .doctor-info p {
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            transition: transform 0.3s;
+            margin-top: 100px; /* Margin to prevent overlap with doctor info */
+        }
+
+        .container:hover {
+            transform: translateY(-5px); /* Elevate on hover */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .appointment-form {
+            width: 100%;
+        }
+
+        .appointment-form h2 {
+            margin-bottom: 20px;
+            color: #333;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        .appointment-form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .appointment-form input,
+        .appointment-form textarea {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: border-color 0.3s, box-shadow 0.3s; /* Added shadow on focus */
+        }
+
+        .appointment-form input:focus,
+        .appointment-form textarea:focus {
+            border-color: #ff4081;
+            box-shadow: 0 0 5px rgba(255, 64, 129, 0.5); /* Shadow on focus */
+        }
+
+        .radio-group {
+            display: flex;
+            /* justify-content: space-between; */
+            margin-bottom: 20px;
+        }
+
+        .radio-group input {
+            margin-right: 10px;
+        }
+
+        .radio-group label {
+            margin-right: 20px;
+        }
+        #yes,#no{
+            width: min-content;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #ff4081;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s; /* Added scale effect */
+            flex: 1; /* Make buttons responsive */
+            margin: 5px; /* Add margin for spacing */
+        }
+
+        button:hover {
+            background-color: #e03570;
+            transform: scale(1.05); /* Slightly enlarge button */
+        }
+
+        /* New button for finding the clinic */
+        .find-clinic-button {
+            background-color: #4CAF50;
+        }
+
+        .find-clinic-button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        @media (max-width: 600px) {
+            .doctor-info img {
+                width: 60px; /* Smaller image on mobile */
+                height: 60px;
+            }
+
+            .container {
+                padding: 15px; /* Reduce padding on small screens */
+            }
+
+            button {
+                flex: 1; /* Make buttons full width on mobile */
+                margin: 5px 0; /* Stack buttons on mobile */
+            }
+        }
+
+        /* Flexbox for buttons */
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 20px; /* Space above buttons */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="doctor-info">
+            <img src="https://img.freepik.com/premium-photo/male-doctor-logo-wearing-multi-color-color-suit_1029679-143929.jpg?semt=ais_hybrid" alt="Dr. PHORE">
+            <div class="info">
+                <h2>Dr. Vikas</h2>
+                <p>General Physician</p>
+                <p>123 Any Avonus, Gurgaon, ST 12345</p>       
+                <p>+91-9991646109</p>
+            </div>
+        </div>
+        <div class="appointment-form">
+            <h2>Personal Information</h2>
+            <form>
+                <label for="date">Your Appointment:</label>
+                <input type="date" id="date" name="date" required>
+                
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+                
+                <label for="reason">What is the reason for your visit?</label>
+                <textarea id="reason" name="reason" rows="4" required></textarea>
+                
+                <label>Have you visited before?</label>
+                <div class="radio-group">
+                    <input type="radio" id="yes" name="visited" value="yes" required>
+                    <label for="yes">Yes</label>
+                    <input type="radio" id="no" name="visited" value="no" required>
+                    <label for="no">No</label>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit">Submit</button>
+                    <button class="find-clinic-button">Find Clinic</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

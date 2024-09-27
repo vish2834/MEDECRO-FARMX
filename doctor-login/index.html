@@ -8,12 +8,18 @@
    <link rel="stylesheet" href="doctor-login.css">
 </head>
 <body>
+
+    <div id="message-box"><span class="close" onclick="destroy()">x</span><H3 id="error-msg"></H3><H3 id="info-msg"></H3><H3 id="warning-msg"></H3></div>
+
   <div class="container">
     <div class="form-header">
         <h2>Doctor Registration Form</h2>
         <p>Welcome to Smart Health Clinic! Please fill in the details to register as a doctor.</p>
     </div>
-    <form action="#" method="POST" class="registration-form">
+
+    
+
+    <form id="registration-form">
         <!-- Personal Information -->
         <fieldset>
             <legend><i class="fas fa-user-md"></i> Personal Information</legend>
@@ -45,6 +51,14 @@
             <div class="input-group">
                 <label for="email">Email Address:</label>
                 <input type="email" id="email" name="email" required placeholder="example@domain.com">
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-group">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
             </div>
         </fieldset>
 
@@ -99,44 +113,96 @@
 
         <!-- Form Submission -->
         <button type="submit" class="btn">Register</button>
+        <div class="bottom-links">
+            <a href="../login/login.html">Patient? Sign up here</a>
+        </div>
     </form>
 </div>
 
   
   <script>
-    document.getElementById("registerForm").addEventListener("submit", function(event) {
+
+    document.getElementById("registration-form").addEventListener("submit", function(event) {
       event.preventDefault(); // Prevent default form submission
   
       // Get form field values
-      const clinicName = document.getElementById("clinicName").value;
-      const adminName = document.getElementById("adminName").value;
+      const firstName = document.getElementById("first-name").value;
+      const lastName = document.getElementById("last-name").value;
+      const gender = document.getElementById("gender").value;
+      const dob = document.getElementById("dob").value;
+      const contact = document.getElementById("contact").value;
       const email = document.getElementById("email").value;
-      const address = document.getElementById("address").value;
-      const phone = document.getElementById("phone").value;
-      const country = document.getElementById("country").value;
-      const province = document.getElementById("province").value;
-      const timezone = document.getElementById("timezone").value;
-      const username = document.getElementById("username").value;
       const password = document.getElementById("password").value;
       const confirmPassword = document.getElementById("confirm-password").value;
-      const termsChecked = document.getElementById("terms").checked;
-      const errorMessage = document.getElementById("errorMessage");
-  
+      const specialty = document.getElementById("specialty").value;
+      const qualification = document.getElementById("qualification").value;
+      const experience = document.getElementById("experience").value;
+      const availability = document.getElementById("availability").value;
+      const address = document.getElementById("address").value;
+      const city = document.getElementById("city").value;
+      const state = document.getElementById("state").value;
+      const zip = document.getElementById("zip").value;
+
       // Check if all fields are filled and passwords match
-      if (clinicName && adminName && email && address && phone && country && province && timezone && username && password && confirmPassword && termsChecked && (password === confirmPassword)) {
-        errorMessage.style.display = "none"; // Hide the error message if validation passes
-        window.location.href = "../signup-form/index.html"; // Replace with actual path
+      if (firstName && lastName && gender && dob && contact && email && password && confirmPassword && (password == confirmPassword) && specialty && qualification && experience && availability && address && city && state && zip) {
+        const data = {
+            "firstName":firstName,
+            "lastName":lastName,
+            "gender":gender,
+            "dob":dob,
+            "contact":contact,
+            "email":email,
+            "password":password,
+            "confirmPassword":confirmPassword,
+            "specialty":specialty,
+            "qualification":qualification,
+            "experience":experience,
+            "availability":availability,
+            "address":address,
+            "city":city,
+            "state":state,
+            "zip":zip
+        };
+        // console.log(data)
+
+        let users_data = JSON.parse(localStorage.getItem("user"));
+        if(Object.keys(users_data.doctors.users).includes(email)){
+            return messageBox("Email already registered.", "warning");
+        }else{
+            users_data.doctors.users[email] = (data);
+            localStorage.setItem("user", (JSON.stringify(users_data)));
+            window.location.href = "../login/login.html"; // Replace with actual path
+        }
+
+        
       } else {
-        errorMessage.style.display = "block"; // Show error message
+        return messageBox("Something is wrong please check filled form again.", "error");
       }
     });
-    const hamburger = document.getElementById('hamburger');
-    const navbarMobile = document.getElementById('navbar-mobile');
 
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navbarMobile.classList.toggle('active');
-    });
+    function destroy(){
+        document.getElementById(`message-box`).style.display = 'none';
+    }
+
+    function activate(){
+        document.getElementById(`message-box`).style.display = 'flex';
+    }
+
+    
+    messageBox = (msg, msgType)=>{
+      activate();
+      let type = {
+        "info":"info-msg",
+        "error":"error-msg",
+        "warning":"warning-msg"
+      };
+
+      let ele = document.getElementById(`${type[msgType]}`);
+      ele.innerText = msg;
+      ele.style.display = 'block';
+
+    }
+    
 </script>
 
 </body>

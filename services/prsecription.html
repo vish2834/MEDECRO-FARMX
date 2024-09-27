@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescription Management</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #e3f2fd, #ffffff); /* Light blue gradient */
+        }
+        .container {
+            margin-top: 50px;
+            max-width: 900px; /* Increased width */
+        }
+        h1 {
+            text-align: left;
+            color: #1976d2; /* Dark blue color */
+            position: relative;
+        }
+        .search-box {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            gap: 10px;
+            margin-right: 20px;
+            margin-top: 10px;
+        }
+        .search-box input {
+            border: 1px solid #1976d2;
+            border-radius: 20px;
+            padding: 5px 15px;
+            outline: none;
+            width: 200px;
+            height: 30px;
+            font-size: 15px;
+        }
+        .search-box input[type="text"]:focus {
+            box-shadow: 0 0 10px rgba(25, 118, 210, 0.2);
+        }
+        .search-box input[type="date"] {
+            border-radius: 20px;
+            padding: 5px 10px;
+            border: 1px solid #1976d2;
+            outline: none;
+        }
+        .prescription-item {
+            background-color: #ffffff; /* White background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: flex; /* Use flexbox for alignment */
+            align-items: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .prescription-item img {
+            width: 80px; /* Image size */
+            height: 80px;
+            border-radius: 50%; /* Circular image */
+            margin-right: 20px; /* Space between image and text */
+        }
+        .prescription-item h5 {
+            margin: 0;
+            color: #1976d2;
+        }
+        .prescription-item p {
+            color: #555;
+        }
+        .prescription-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+        }
+        .btn-primary {
+            background-color: #64b5f6; /* Light blue button */
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #1e88e5; /* Dark blue hover effect */
+        }
+        .prescription-details {
+            margin-top: 10px;
+            color: #333;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .prescription-details strong {
+            color: #1976d2; /* Highlight details with a consistent blue tone */
+        }
+        .text-center {
+            margin-top: 30px;
+        }
+        /* Sort dropdown */
+        .sort-box {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Prescriptions
+            <div class="search-box">
+                <!-- Search box for filtering prescriptions -->
+                <input type="text" id="searchInput" placeholder="Search prescriptions" onkeyup="filterPrescriptions()">
+                
+                <!-- Date picker to filter by date -->
+                <input type="date" id="dateInput" onchange="filterPrescriptions()">
+            </div>
+        </h1>
+
+        
+        
+        <div id="prescriptionList">
+            <div class="prescription-item">
+                <img src="https://via.placeholder.com/80" alt="Prescription Image">
+                <div>
+                    <h5 class="prescription-name">Amoxicillin</h5>
+                    <p><strong>Date Prescribed:</strong> <span class="prescription-date">2024-09-10</span></p>
+                    <p><strong>Dosage:</strong> 500mg, 3 times a day</p>
+                    <div class="prescription-details">
+                        <strong>Instructions:</strong> Take with food. Complete the 7-day course. Avoid alcohol while taking this medication.<br>
+                        <strong>Prescribing Doctor:</strong> Dr. Jane Smith, General Practitioner<br>
+                        <strong>Pharmacy:</strong> ABC Pharmacy, Downtown<br>
+                        <strong>Side Effects:</strong> Possible nausea, diarrhea, or mild skin rash.
+                    </div>
+                </div>
+            </div>
+
+            <div class="prescription-item">
+                <img src="https://via.placeholder.com/80" alt="Prescription Image">
+                <div>
+                    <h5 class="prescription-name">Loratadine</h5>
+                    <p><strong>Date Prescribed:</strong> <span class="prescription-date">2024-08-05</span></p>
+                    <p><strong>Dosage:</strong> 10mg, once a day</p>
+                    <div class="prescription-details">
+                        <strong>Instructions:</strong> Take in the morning with or without food. Suitable for allergy relief.<br>
+                        <strong>Prescribing Doctor:</strong> Dr. Adam Brown, Allergist<br>
+                        <strong>Pharmacy:</strong> Wellness Pharmacy, Central Ave.<br>
+                        <strong>Side Effects:</strong> May cause drowsiness in some individuals.
+                    </div>
+                </div>
+            </div>
+
+            <div class="prescription-item">
+                <img src="https://via.placeholder.com/80" alt="Prescription Image">
+                <div>
+                    <h5 class="prescription-name">Metformin</h5>
+                    <p><strong>Date Prescribed:</strong> <span class="prescription-date">2024-07-15</span></p>
+                    <p><strong>Dosage:</strong> 500mg, twice a day</p>
+                    <div class="prescription-details">
+                        <strong>Instructions:</strong> Take after meals for diabetes management. Ensure regular blood sugar monitoring.<br>
+                        <strong>Prescribing Doctor:</strong> Dr. Elizabeth Green, Endocrinologist<br>
+                        <strong>Pharmacy:</strong> MedCare Pharmacy, North Street<br>
+                        <strong>Side Effects:</strong> May cause stomach upset. Ensure adequate hydration.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="prescription-item">
+                <img src="https://via.placeholder.com/80" alt="Prescription Image">
+                <div>
+                    <h5 class="prescription-name">Ibuprofen</h5>
+                    <p><strong>Date Prescribed:</strong> <span class="prescription-date">2024-06-25</span></p>
+                    <p><strong>Dosage:</strong> 400mg, every 6 hours as needed</p>
+                    <div class="prescription-details">
+                        <strong>Instructions:</strong> Take with food or milk to avoid stomach irritation. Do not exceed 6 doses in 24 hours.<br>
+                        <strong>Prescribing Doctor:</strong> Dr. Kevin White, Orthopedic Surgeon<br>
+                        <strong>Pharmacy:</strong> City Health Pharmacy, Westside<br>
+                        <strong>Side Effects:</strong> May cause gastrointestinal discomfort or headaches if taken frequently.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button class="btn btn-primary">Add New Prescription</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to filter prescriptions by name and date
+        function filterPrescriptions() {
+            const searchValue = document.getElementById('searchInput').value.toLowerCase();
+            const selectedDate = document.getElementById('dateInput').value;
+            const prescriptions = document.querySelectorAll('.prescription-item');
+            
+            prescriptions.forEach(function(prescription) {
+                const name = prescription.querySelector('.prescription-name').innerText.toLowerCase();
+                const date = prescription.querySelector('.prescription-date').innerText;
+
+                // Check if name matches search value and if date matches selected date (if any)
+                const matchesName = name.includes(searchValue);
+                const matchesDate = selectedDate ? date === selectedDate : true;
+
+                // Show or hide the prescription based on filters
+                if (matchesName && matchesDate) {
+                    prescription.style.display = 'flex';
+                } else {
+                    prescription.style.display = 'none';
+                }
+            });
+        }
+
+        // Function to sort prescriptions by name or date
+        function sortPrescriptions() {
+            const sortOption = document.getElementById('sortOptions').value;
+            const prescriptionList = document.getElementById('prescriptionList');
+            const prescriptions = Array.from(prescriptionList.querySelectorAll('.prescription-item'));
+
+            prescriptions.sort(function(a, b) {
+                const nameA = a.querySelector('.prescription-name').innerText.toLowerCase();
+                const nameB = b.querySelector('.prescription-name').innerText.toLowerCase();
+                const dateA = new Date(a.querySelector('.prescription-date').innerText);
+                const dateB = new Date(b.querySelector('.prescription-date').innerText);
+
+                if (sortOption === 'name-asc') {
+                    return nameA.localeCompare(nameB);
+                } else if (sortOption === 'name-desc') {
+                    return nameB.localeCompare(nameA);
+                } else if (sortOption === 'date-asc') {
+                    return dateA - dateB;
+                } else if (sortOption === 'date-desc') {
+                    return dateB - dateA;
+                }
+            });
+
+            // Append sorted prescriptions back to the list
+            prescriptionList.innerHTML = '';
+            prescriptions.forEach(function(prescription) {
+                prescriptionList.appendChild(prescription);
+            });
+        }
+    </script>
+</body>
+</html>

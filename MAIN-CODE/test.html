@@ -47,5 +47,12 @@
     <!-- Leaflet.js -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="test.js"></script> <!-- Link to the JavaScript file -->
+
+    <script>
+        const current_user = JSON.parse(localStorage.getItem("current_user"));
+        if(!current_user.active){
+            window.location.href = window.location.origin;
+        }
+    </script>
 </body>
 </html>

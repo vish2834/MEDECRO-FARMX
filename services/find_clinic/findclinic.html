@@ -93,6 +93,43 @@
         .book-btn:hover {
             background-color: #388e3c;
         }
+
+        .message-box{
+            display: none;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            position: fixed;
+            width: 200px;
+            height: 70px;
+            top: 20px;
+            right: 26px;
+            background-color: aliceblue;
+            filter: drop-shadow(2px 4px 87px black);
+            border-radius: 10px;
+            color: gray;
+            padding: 10px;
+        }
+
+        .message-box .close{
+            position: fixed;
+            top: 5px;
+            right: 9px;
+            cursor: pointer;
+        }
+
+        .message-box #info-msg{
+            color: rgb(101, 196, 114);
+            display: none;
+        }
+        .message-box #error-msg{
+            color: rgb(196, 101, 101);
+            display: none;
+        }
+        .message-box #warning-msg{
+            color: rgb(190, 196, 101);
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -155,7 +192,7 @@
                     <h3>Sunrise Clinic</h3>
                     <p>123 Health Avenue, Delhi</p>
                 </div>
-                <button class="book-btn">Book Appointment</button>
+                <button class="book-btn" onclick="loginCheck()">Book Appointment</button>
             </div>
             <div class="clinic-item">
                 <img src="https://via.placeholder.com/60" alt="Clinic Photo">
@@ -163,7 +200,7 @@
                     <h3>Green Valley Clinic</h3>
                     <p>456 Wellness Street, Mumbai</p>
                 </div>
-                <button class="book-btn">Book Appointment</button>
+                <button class="book-btn"  onclick="loginCheck()">Book Appointment</button>
             </div>
             <div class="clinic-item">
                 <img src="https://via.placeholder.com/60" alt="Clinic Photo">
@@ -171,7 +208,7 @@
                     <h3>Heart Care Clinic</h3>
                     <p>789 Care Road, Bangalore</p>
                 </div>
-                <button class="book-btn">Book Appointment</button>
+                <button class="book-btn" onclick="loginCheck()">Book Appointment</button>
             </div>
             <div class="clinic-item">
                 <img src="https://via.placeholder.com/60" alt="Clinic Photo">
@@ -179,7 +216,7 @@
                     <h3>LifeLine Clinic</h3>
                     <p>101 Wellness Blvd, Chennai</p>
                 </div>
-                <button class="book-btn">Book Appointment</button>
+                <button class="book-btn" onclick="loginCheck()">Book Appointment</button>
             </div>
             <div class="clinic-item">
                 <img src="https://via.placeholder.com/60" alt="Clinic Photo">
@@ -187,10 +224,45 @@
                     <h3>Smile Dental Clinic</h3>
                     <p>202 Happy Teeth Lane, Kolkata</p>
                 </div>
-                <button class="book-btn">Book Appointment</button>
+                <button class="book-btn" onclick="loginCheck()">Book Appointment</button>
             </div>
         </div>
     </div>
+    <div class="message-box" id="msg-box">
+        <span id="info-msg"></span>
+        <span id="error-msg"></span>
+        <span id="warning-msg"></span>
+        <span class="close" onclick="destroy()">x</span>
+    </div>
+    <script>
+
+        const messageBox = (msg, msgtype)=>{
+            let type = {
+                "info":"info-msg",
+                "error":"error-msg",
+                "warning":"warning-msg"
+            };
+
+            document.getElementById(type[msgtype]).innerHTML = msg;
+            document.getElementById(type[msgtype]).style.display = "block";
+            activate();
+        };
+
+        function destroy(){
+            document.getElementById(`msg-box`).style.display = 'none';
+        }
+
+        function activate(){
+            document.getElementById(`msg-box`).style.display = 'flex';
+        }
+
+        function loginCheck(){
+            const current_user = JSON.parse(localStorage.getItem("current_user"));
+            if(!current_user.active){
+                messageBox("You are not logged in.<br> <a href='../../login/login.html'>Login Here</a>", "info");
+            }
+        }
+    </script>
 </body>
 </html>
 
